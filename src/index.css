@@ -1,5 +1,25 @@
-@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css";
-@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
 
 :root {
 }
+
+body {
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  /* min-height: 100dvh; */
+}
+
+/* header {
+  background-color: lightblue;
+  height: 75px;
+} */
+
+/* footer {
+  background-color: lightgrey;
+  height: 75px;
+} */
