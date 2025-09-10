@@ -1,4 +1,5 @@
 import type { Ad } from "../models/Ad";
+import type { AdExt } from "../models/AdExt";
 import type { JobsearchResponse } from "../models/JobsearchResponse";
 import { get } from "./serviceBase";
 
@@ -17,8 +18,8 @@ export const getAds = async (searchValue: string) => {
   return data.hits;
 };
 
-export const getAdById = async (id: string) => {
-  const data = await get<Ad>(`${BASE_URL}ad/${id}`);
+export const getAdById = async (id: string): Promise<AdExt> => {
+  const data = await get<AdExt>(`${BASE_URL}ad/${id}`);
 
   return data;
 };

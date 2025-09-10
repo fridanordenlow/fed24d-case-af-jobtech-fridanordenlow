@@ -1,9 +1,9 @@
-import { DigiLayoutBlock, DigiLayoutContainer, DigiTypography } from "@digi/arbetsformedlingen-react";
-import type { Ad } from "../models/Ad";
+import { DigiLayoutBlock, DigiLayoutContainer } from "@digi/arbetsformedlingen-react";
+import type { AdExt } from "../models/AdExt";
 import { LayoutBlockVariation } from "@digi/arbetsformedlingen";
 
 interface Props {
-  ad: Ad;
+  ad: AdExt;
 }
 
 export const AdDetailsPresentation = ({ad}:Props) => {
@@ -19,15 +19,22 @@ export const AdDetailsPresentation = ({ad}:Props) => {
         border: '2px solid blue',
       }}
     >
-<DigiTypography>
+      <h1>AdDetailsPresentation</h1>
+      <h1>{ad.headline}</h1>
+      <section>
+        <h2>{ad.employer.name}</h2>
+        <p><strong>Plats:</strong> {ad.workplace_address.region} {ad.workplace_address.municipality}</p>
+        <p><strong>Publicerad:</strong> {new Date(ad.publication_date).toLocaleDateString()}</p>
+        <p><strong>Deadline:</strong> {new Date(ad.application_deadline).toLocaleDateString()}</p>
+        <p><strong>Här skulle kvalifikationer vara bra, men jag hittar inte hur jag ska göra:</strong></p>
+      </section>
 
-        <h1>AdDetailsPresentation</h1>
-        <div>
-          <h2>{ad?.headline}</h2>
-          <p>{ad?.employer.name}</p>
-        </div>
+      <section>
+        <h3>Tjänstbeskrivning</h3>
+        <p dangerouslySetInnerHTML={{ __html: ad.description.text_formatted }}></p>
+      </section>
 
-</DigiTypography>
+
     </DigiLayoutContainer>
   </DigiLayoutBlock>
   </>
