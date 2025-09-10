@@ -20,6 +20,14 @@ Det går även bra att använda historiska annonser om ni vill jämföra aktuell
 
 Om möjligt, använd en grafisk presentation av era resultat genom t.ex. stapeldiagram eller linjegrafer.
 
+## Designsystem
+
+Arbetsförmedlingens designsystem är öppen källkod och går att använda för att snabbt komma igång med utvecklingen av e-tjänster/applikationer till slutanvändare. Perfekt om man vill spara mycket tid och få ett mer enhetligt användarinteraktion. Finns support för ex react, angular och plain vanilla javascript. 
+
+Designsystemet består av två delar. Den viktigaste delen är alla vi, människorna, som delar en gemensam filosofi om att vi vill samarbeta och tillsammans ta fram bästa tänkbara tjänster och produkter för våra användare. Den andra delen är hur vi ska göra detta. Själva verktygslådan. Designsystemet som byggsten samlar återanvändbara verktyg, processer och riktlinjer på ett ställe. När vi både har en gemensam samarbetsmodell och konkret verktygslåda kan vi alla bidra till att hela tiden förbättra både designsystemet och våra produkter.
+
+https://designsystem.arbetsformedlingen.se/
+
 **Observera**
 Er slutprodukt ska ej innehålla Arbetsförmedlingens logga eller färger. Anpassa gärna efter eget tycke och smak så att ni har en färgpalett och en god tanke bakom. 
 

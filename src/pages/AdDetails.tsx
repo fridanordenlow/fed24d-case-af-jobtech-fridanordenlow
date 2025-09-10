@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Ad } from "../models/Ad";
 import { getAdById } from "../services/adService";
 import { useParams } from "react-router";
+import { AdDetailsPresentation } from "../components/AdDetailsPresentation";
 
 export const AdDetails = () => {
   const [ad, setAd] = useState<Ad>();
@@ -19,12 +20,10 @@ export const AdDetails = () => {
     if (ad) return;
 
     getData();
-  });
+  }, [id]);
+
+  if (!ad) return <p>Kunde inte hitta annonsen.</p>;
   return (
-    <div>
-      <h2>AdDetails</h2>
-      <h3>{ad?.headline}</h3>
-      <p>{ad?.employer.name}</p>
-    </div>
+    <AdDetailsPresentation ad={ad}/>
   );
 };

@@ -1,3 +1,10 @@
+import { DigiLayoutBlock } from "@digi/arbetsformedlingen-react";
+
 export const AdsPresentation = () => {
-  return <div>AdsPresentation</div>;
+  return <>
+    <DigiLayoutBlock><div>
+      AdsPresentation
+      </div>
+      </DigiLayoutBlock>;
+  </>
 };
