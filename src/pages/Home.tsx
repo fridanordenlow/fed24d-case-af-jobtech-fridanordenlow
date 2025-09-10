@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Ad } from "../models/Ad";
-import { getAds, getLatestAds } from "../services/adService";
+import { getLatestAds } from "../services/adService";
 import { Link } from "react-router";
 
 export const Home = () => {
