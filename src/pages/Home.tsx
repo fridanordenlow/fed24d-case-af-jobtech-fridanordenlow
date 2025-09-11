@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import type { Ad } from "../models/Ad";
-import { getLatestAds } from "../services/adService";
-import { Link } from "react-router";
+import { useEffect, useState } from 'react';
+import type { Ad } from '../models/Ad';
+import { getLatestAds } from '../services/adService';
+import { Link } from 'react-router';
 
 export const Home = () => {
   const [ads, setAds] = useState<Ad[]>([]);
