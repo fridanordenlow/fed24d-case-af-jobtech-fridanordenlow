@@ -34,7 +34,6 @@ export const AdDetailsPresentation = ({ad}:Props) => {
         <p dangerouslySetInnerHTML={{ __html: ad.description.text_formatted }}></p>
       </section>
 
-
     </DigiLayoutContainer>
   </DigiLayoutBlock>
   </>
