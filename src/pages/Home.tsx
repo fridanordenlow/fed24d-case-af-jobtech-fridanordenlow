@@ -1,4 +1,4 @@
-import { LatestAdsPresentation } from "../components/LatestAdsPresentation";
+import { LatestAdsPresentation } from '../components/LatestAdsPresentation';
 
 export const Home = () => {
   return (

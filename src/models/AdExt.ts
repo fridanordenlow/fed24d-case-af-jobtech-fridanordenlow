@@ -1,4 +1,4 @@
-import type { Ad } from "./Ad";
+import type { Ad } from './Ad';
 
 export interface AdExt extends Ad {
   application_deadline?: string;
@@ -11,13 +11,13 @@ export interface AdExt extends Ad {
     label?: string;
   };
 
-  salary_type?:{
+  salary_type?: {
     label: string;
-  }
+  };
 
-  duration?:{
+  duration?: {
     label: string;
-  }
+  };
 
   working_hours_type?: {
     label?: string;
@@ -38,7 +38,7 @@ export interface AdExt extends Ad {
   occupation_field?: {
     label?: string;
   };
-  
+
   workplace_address: {
     region?: string;
     municipality?: string;
