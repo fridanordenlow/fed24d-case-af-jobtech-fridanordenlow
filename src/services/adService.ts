@@ -1,10 +1,9 @@
-import type { Ad } from "../models/Ad";
-import type { AdExt } from "../models/AdExt";
-import type { JobsearchResponse } from "../models/JobsearchResponse";
-import { get } from "./serviceBase";
+import type { AdExt } from '../models/AdExt';
+import type { JobsearchResponse } from '../models/JobsearchResponse';
+import { get } from './serviceBase';
 
-const BASE_URL = "https://jobsearch.api.jobtechdev.se/";
-const SEARCH = "search?occupation-group=DJh5_yyF_hEM";
+const BASE_URL = 'https://jobsearch.api.jobtechdev.se/';
+const SEARCH = 'search?occupation-group=DJh5_yyF_hEM';
 // q=Stockholm%20frontend&offset=0&limit=10
 // "q=Stockholm%20frontend" Is the search query. %20 = blankspace.
 // occupation-group=DJh5_yyF_hEM targets jobs within the software development career.
