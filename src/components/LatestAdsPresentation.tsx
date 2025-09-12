@@ -1,9 +1,12 @@
-import { Link, useLoaderData } from 'react-router';
+import { useLoaderData } from 'react-router';
 import {
+  InfoCardMultiHeadingLevel,
+  InfoCardMultiType,
   LayoutColumnsElement,
   LayoutColumnsVariation,
 } from '@digi/arbetsformedlingen';
 import {
+  DigiInfoCardMulti,
   DigiLayoutColumns,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
@@ -12,21 +15,26 @@ import type { LatestAdsLoader } from '../loaders/latestAdsLoader';
 export const LatestAdsPresentation = () => {
   const { ads } = useLoaderData<LatestAdsLoader>();
 
-  const newHTML = ads.map((a) => (
-    <Link to={`/ads/${a.id}`} key={a.id}>
-      <h3>{a.headline}</h3>
-      <p>{a.employer.name}</p>
-    </Link>
-  ));
-
-  return (
+  const afHTML = (
     <DigiTypography>
       <DigiLayoutColumns
         afElement={LayoutColumnsElement.DIV}
         afVariation={LayoutColumnsVariation.TWO}
       >
-        {newHTML}
+        {ads.map((a) => (
+          <DigiInfoCardMulti
+            afHeading={a.headline}
+            afHeadingLevel={InfoCardMultiHeadingLevel.H2}
+            afType={InfoCardMultiType.RELATED}
+            afLinkHref={`/ads/${a.id}`}
+            key={a.id}
+          >
+            <p>{a.employer.name}</p>
+          </DigiInfoCardMulti>
+        ))}
       </DigiLayoutColumns>
     </DigiTypography>
   );
+
+  return <>{afHTML}</>;
 };
