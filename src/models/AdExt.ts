@@ -49,7 +49,7 @@ export interface AdExt extends Ad {
     description?: string;
     email?: string;
     telephone?: string;
-  }[];
+  };
 
   publication_date?: string;
 }

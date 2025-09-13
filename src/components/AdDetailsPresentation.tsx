@@ -56,22 +56,23 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                           </p>
                         )}
 
-                      {ad.occupation_field?.label && (
-                        <p>
-                          <strong>Yrkesområde:</strong>{' '}
-                          {ad.occupation_field.label}
-                        </p>
-                      )}
-                      {ad.occupation_group?.label && (
-                        <p>
-                          <strong>Yrkesgrupp:</strong>{' '}
-                          {ad.occupation_group.label}
-                        </p>
-                      )}
+                      
 
                       {ad.employment_type?.label && (
                         <p>
                           <strong>Anställningstyp:</strong>{' '}
+                          {ad.occupation_field?.label && (
+                            <p>
+                              <strong>Yrkesområde:</strong>{' '}
+                              {ad.occupation_field.label}
+                            </p>
+                          )}
+                          {ad.occupation_group?.label && (
+                            <p>
+                              <strong>Yrkesgrupp:</strong>{' '}
+                              {ad.occupation_group.label}
+                            </p>
+                          )}
                           {ad.employment_type.label}
                         </p>
                       )}
@@ -83,15 +84,17 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                         </p>
                       )}
 
-                      {ad.experience_required && (
-                        <p>
-                          <strong>Yrkeserfarenhet krävs:</strong> Ja
-                        </p>
-                      )}
+
                       {typeof ad.driving_license_required === 'boolean' && (
                         <p>
                           <strong>Körkort krävs:</strong>{' '}
                           {ad.driving_license_required ? 'Ja' : 'Nej'}
+                        </p>
+                      )}
+
+                      {ad.experience_required && (
+                        <p>
+                          <strong>Yrkeserfarenhet krävs:</strong> Ja
                         </p>
                       )}
 
@@ -123,7 +126,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                         </div>
                       ) : null}
 
-                      {ad.publication_date && (
+{ad.publication_date && (
                         <p>
                           <strong>Publicerad:</strong>{' '}
                           {new Date(ad.publication_date).toLocaleDateString()}
