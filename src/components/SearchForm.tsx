@@ -28,6 +28,17 @@ export const SearchForm = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Hydrate context when component mounts, look for alternative way
 
+  // Site crashes with this useEffect without dependencies
+  // useEffect(() => {
+  //   const setInitialAds = () => {
+  //     setAds(loaderData.ads);
+  //   };
+
+  //   if (!loaderData?.ads.length || ads.length > 0) return;
+
+  //   setInitialAds();
+  // });
+
   const handleSearch = async (e: CustomEvent<string>) => {
     const searchValue = e.detail;
     setLoading(true);
