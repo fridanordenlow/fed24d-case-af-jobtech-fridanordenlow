@@ -6,14 +6,12 @@ import { LayoutBlockVariation } from '@digi/arbetsformedlingen';
 
 export const Layout = () => {
   return (
-    <>
-      <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
-        <Header />
-        <main>
-          <Outlet />
-        </main>
-        <Footer />
-      </DigiLayoutBlock>
-    </>
+    <DigiLayoutBlock afVariation={LayoutBlockVariation.TERTIARY}>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </DigiLayoutBlock>
   );
 };
