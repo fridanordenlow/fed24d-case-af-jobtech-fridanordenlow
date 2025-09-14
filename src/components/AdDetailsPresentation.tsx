@@ -1,10 +1,13 @@
 import {
+  DigiButton,
   DigiLayoutBlock,
   DigiLayoutContainer,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
 import type { AdExt } from '../models/AdExt';
 import {
+  ButtonSize,
+  ButtonVariation,
   LayoutBlockVariation,
   TypographyVariation,
 } from '@digi/arbetsformedlingen';
@@ -14,6 +17,11 @@ interface Props {
 }
 
 export const AdDetailsPresentation = ({ ad }: Props) => {
+
+
+
+
+
   return (
     <>
       <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
@@ -142,18 +150,24 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                         </p>
                       )}
 
-                      {ad.application_details?.url && (
-                        <p>
-                          <strong>Ansökan:</strong>{' '}
-                          <a
-                            href={ad.application_details.url}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            {ad.application_details.url}
-                          </a>
-                        </p>
-                      )}
+
+
+
+{ad.application_details?.url && (
+  <div>
+    <DigiButton
+      afSize={ButtonSize.MEDIUM}
+      afVariation={ButtonVariation.PRIMARY}
+      afFullWidth={false}
+      onClick={() =>
+        window.open(ad.application_details!.url, '_blank')
+      }
+    >
+      Sök tjänsten
+    </DigiButton>
+  </div>
+)}
+
                     </div>
                   </section>
                 </DigiTypography>
@@ -167,7 +181,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                     <h3>Tjänstbeskrivning</h3>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: ad.description.text_formatted,
+                        __html: ad.description.text_formatted
                       }}
                     ></p>
                   </section>
