@@ -17,11 +17,6 @@ interface Props {
 }
 
 export const AdDetailsPresentation = ({ ad }: Props) => {
-
-
-
-
-
   return (
     <>
       <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
@@ -64,8 +59,6 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                           </p>
                         )}
 
-                      
-
                       {ad.employment_type?.label && (
                         <p>
                           <strong>Anställningstyp:</strong>{' '}
@@ -91,7 +84,6 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                           {ad.working_hours_type.label}
                         </p>
                       )}
-
 
                       {typeof ad.driving_license_required === 'boolean' && (
                         <p>
@@ -134,7 +126,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                         </div>
                       ) : null}
 
-{ad.publication_date && (
+                      {ad.publication_date && (
                         <p>
                           <strong>Publicerad:</strong>{' '}
                           {new Date(ad.publication_date).toLocaleDateString()}
@@ -150,24 +142,20 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                         </p>
                       )}
 
-
-
-
-{ad.application_details?.url && (
-  <div>
-    <DigiButton
-      afSize={ButtonSize.MEDIUM}
-      afVariation={ButtonVariation.PRIMARY}
-      afFullWidth={false}
-      onClick={() =>
-        window.open(ad.application_details!.url, '_blank')
-      }
-    >
-      Sök tjänsten
-    </DigiButton>
-  </div>
-)}
-
+                      {ad.application_details?.url && (
+                        <div>
+                          <DigiButton
+                            afSize={ButtonSize.MEDIUM}
+                            afVariation={ButtonVariation.PRIMARY}
+                            afFullWidth={false}
+                            onClick={() =>
+                              window.open(ad.application_details!.url, '_blank')
+                            }
+                          >
+                            Sök tjänsten
+                          </DigiButton>
+                        </div>
+                      )}
                     </div>
                   </section>
                 </DigiTypography>
@@ -181,7 +169,10 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                     <h3>Tjänstbeskrivning</h3>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: ad.description.text_formatted
+                        __html: ad.description.text_formatted?.replace(
+                          /\r?\n/g,
+                          '<br />'
+                        ), // ersätter radbrytningar
                       }}
                     ></p>
                   </section>
