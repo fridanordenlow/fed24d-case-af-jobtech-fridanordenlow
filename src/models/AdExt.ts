@@ -39,6 +39,18 @@ export interface AdExt extends Ad {
     label?: string;
   };
 
+  must_have?: {
+    work_experiences?: {
+      label: string;
+    }[];
+  };
+
+  nice_to_have?: {
+    work_experiences?: {
+      label: string;
+    }[];
+  };
+
   // workplace_address: {
   //   region?: string;
   //   municipality?: string;
