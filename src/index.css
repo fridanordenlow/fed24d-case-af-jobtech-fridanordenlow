@@ -4,36 +4,30 @@
 :root {
   height: 100%;
 
-  /*--digi--layout-container: black;*/
+  /* --digi--layout-container: black; */
 
-  /*containers bakgrundsfärg*/
-  --digi--color--background--primary: #000000;
+  /* containers bakgrundsfärg */
+  --digi--color--background--primary: #2d2b2b;
 
-  /*body bakgrundsfärg*/
+  /* body bakgrundsfärg */
   .sc-digi-layout-block-h {
-    --digi--layout-block--background--tertiary: #000000;
+    --digi--layout-block--background--tertiary: #2d2b2b;
   }
 
-  /*text color*/
-  --digi--color--text--primary: white;
+  /* text color */
+  --digi--color--text--primary: rgb(220, 219, 219);
 
-  /*button background color*/
-  --digi--button--color--background--primary--default: #808080;
+  /* button background color - why red marked?? */
+  --digi--button--color--background--primary--default: #2d2b2b;
 
-  /*
-  digi-typography a{
-    color: red;
-  }
-    */
-
-  /*Ad text color*/
-  .sc-digi-info-card-multi-h .digi-info-card-multi__link.sc-digi-info-card-multi {
-  color: red;
+  /* ad text color */
+  .sc-digi-info-card-multi-h
+    .digi-info-card-multi__link.sc-digi-info-card-multi {
+    color: #ef5c74;
   }
 
-  /*Ad border color*/
+  /* ad border color - why red marked?? */
   --digi--color--border--secondary: #808080;
-
 
   /*  
   --digi--button--color--background--primary--default: rgb(0, 47, 255);
@@ -42,22 +36,61 @@
   --digi--button--color--background--primary--active:green;
   */
 
-
-  /*button styling*/
+  /* button styling 
+  - TODO: hover button styling ! */
   .sc-digi-button-h .digi-button.sc-digi-button {
-      background-color: #000000;
-      border-radius:0px;
-      border-width: 5px;
-      border-style: dotted;
-      border-color: #808080;
-      color: yellow;;
+    font-family: 'Source Code Pro', monospace;
+    color: #ebda39;
+    background-color: #2d2b2b;
+    border: 3px dashed #808080;
+    border-radius: 3px;
   }
 
-  /*heading styling*/
-  digi-typography{
-    h1, h2, h3{
-      color: red;
+  /* input - doesn't work */
+  .digi-form-input__input .sc-digi-form-input {
+    border: 3px dashed #808080;
+    border-color: #808080;
+  }
+
+  /* heading styling */
+  /* digi-typography {
+    h1 {
+      font-family: 'Press Start 2P', system-ui;
+      /* font-family: 'Orbitron', sans-serif; */
+  /* font-weight: 500; */
+  /* font-size: 1.5rem; */
+  /* color: #a491e6;
     }
+
+    h2 {
+      font-family: 'Source Code Pro', monospace;
+      color: #ef5c74;
+    }
+
+    h3 {
+      font-family: 'Source Code Pro', monospace;
+
+      color: #ef5c74;
+    }
+  }  */
+
+  h1 {
+    font-family: 'Press Start 2P', system-ui;
+    /* font-family: 'Orbitron', sans-serif; */
+    /* font-weight: 500; */
+    /* font-size: 1.5rem; */
+    color: #a491e6;
+  }
+
+  h2 {
+    font-family: 'Source Code Pro', monospace;
+    color: #ef5c74;
+  }
+
+  h3 {
+    font-family: 'Source Code Pro', monospace;
+
+    color: #ef5c74;
   }
 
   /*header styling*/
@@ -83,16 +116,11 @@
   }
 }
 
-/* Test */
-
-
 body {
   margin: 0;
-
 }
 
 main {
-
   flex: 1;
   width: 100%;
   margin-bottom: 1rem;
