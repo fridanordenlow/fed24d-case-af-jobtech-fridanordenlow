@@ -59,6 +59,28 @@
       color: red;
     }
   }
+
+  /*header styling*/
+.sc-digi-layout-block-h .digi-layout-block--primary.sc-digi-layout-block {
+--digi--layout-block--background--primary: black;
+}
+
+  /*footer styling*/
+  .sc-digi-footer-h {
+    --digi--color--background--inverted-1: green;
+    --digi--color--text--inverted: black;
+    /*
+    --digi--global--typography--font-family--default
+    --digi--typography--body--font-size--desktop
+    --digi--typography--description--font-weight--desktop
+    --digi--color--text--inverted
+    --digi--color--text--inverted
+    --digi--color--text--inverted
+    --digi--color--text--inverted
+    --digi--container-gutter--largest
+    --digi--container-gutter--large
+    */
+  }
 }
 
 /* Test */
