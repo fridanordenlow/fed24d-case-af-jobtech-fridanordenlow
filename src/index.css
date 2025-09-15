@@ -94,9 +94,9 @@
   }
 
   /*header styling*/
-.sc-digi-layout-block-h .digi-layout-block--primary.sc-digi-layout-block {
---digi--layout-block--background--primary: black;
-}
+  .sc-digi-layout-block-h .digi-layout-block--primary.sc-digi-layout-block {
+    --digi--layout-block--background--primary: black;
+  }
 
   /*footer styling*/
   .sc-digi-footer-h {
