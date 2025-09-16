@@ -4,6 +4,8 @@ import {
   DigiHeaderNavigationItem,
 } from '@digi/arbetsformedlingen-react';
 import { Link } from 'react-router';
+import reactLogo from "../assets/images/logo.png"
+
 
 export const Header = () => {
   return (
@@ -13,8 +15,16 @@ export const Header = () => {
         afHideSystemName={false}
         afMenuButtonText="Meny"
       >
-        {/* Loggan behöver bytas ut på något sätt */}
-        <a slot="header-logo" aria-label="Sajtens startsida" href="/"></a>
+
+        {/* Vår logga */}
+        <a slot="header-logo" aria-label="Sajtens startsida" href="/">
+          <img 
+            src={reactLogo} 
+            alt="Tech Job Finder logga" 
+            style={{ height: "60px", width: "auto" }} 
+          />
+        </a>
+
         <div slot="header-content">
           {/* <DigiHeaderNotification afNotificationAmount={8}>
             <a href="/">
@@ -29,6 +39,10 @@ export const Header = () => {
             afCloseButtonAriaLabel="Stäng meny"
             afNavAriaLabel="Huvudmeny"
           >
+            
+          <DigiHeaderNavigationItem>
+              <a href="/">Hem</a>
+          </DigiHeaderNavigationItem>
             <DigiHeaderNavigationItem afCurrentPage={true}>
               <a href="/ads">Sök jobb</a>
             </DigiHeaderNavigationItem>
