@@ -107,7 +107,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                   </InfoSection>
 
                   <InfoSection>
-                    {ad.application_contacts?.lengt ? (
+                    {ad.application_contacts?.length ? (
                       <p>
                         <strong>Kontaktperson</strong>
                         {ad.application_contacts.map((contact, index) => (
