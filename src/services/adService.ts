@@ -11,7 +11,7 @@ const SEARCH = 'search?occupation-group=DJh5_yyF_hEM';
 
 export const getAds = async (searchValue: string) => {
   const data = await get<APIResponse>(
-    `${BASE_URL}${SEARCH}&q=${searchValue}&offset=0&limit=10`
+    `${BASE_URL}${SEARCH}&q=${searchValue}&offset=0&limit=100`
   ); // offset part will be dynamic so will have to be replaced
 
   return data.hits;
