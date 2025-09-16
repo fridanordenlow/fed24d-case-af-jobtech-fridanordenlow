@@ -11,11 +11,13 @@
 
   /* body bakgrundsfärg */
   .sc-digi-layout-block-h {
-    --digi--layout-block--background--tertiary: #2d2b2b;
+    --digi--layout-block--background--tertiary: #000000;
   }
 
+  --digi--color--background--secondary: #2d2b2b;
+
   /* text color */
-  --digi--color--text--primary: rgb(220, 219, 219);
+  --digi--color--text--primary: #dcdbdb;
 
   /* button background color - why red marked?? */
   --digi--button--color--background--primary--default: #2d2b2b;
@@ -78,8 +80,8 @@
 
   /*footer styling*/
   .sc-digi-footer-h {
-    --digi--color--background--inverted-1: green;
-    --digi--color--text--inverted: black;
+    --digi--color--background--inverted-1: #2d2b2b;
+    /*--digi--color--text--inverted: black; */
     /*
     --digi--global--typography--font-family--default
     --digi--typography--body--font-size--desktop
