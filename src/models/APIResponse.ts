@@ -2,7 +2,7 @@ import type { Ad } from './Ad';
 
 export type APIResponse = {
   total: {
-    positions: number; // The same as value in API?
+    value: number;
   };
   hits: Ad[];
 };

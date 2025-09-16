@@ -10,6 +10,7 @@ import { SearchForm } from '../components/SearchForm';
 import { AdsPresentation } from '../components/AdsPresentation';
 import { useAdContext } from '../contexts/useAdContext';
 import type { AdsLoader } from '../loaders/adsLoader';
+import { AdsPagination } from '../components/AdsPagination';
 
 export const Ads = () => {
   const loaderData = useLoaderData<AdsLoader>(); // Get initial data from loader
@@ -32,6 +33,7 @@ export const Ads = () => {
       </DigiTypography>
       <SearchForm />
       <AdsPresentation />
+      <AdsPagination />
       {loading && (
         <DigiLoaderSpinner
           afSize={LoaderSpinnerSize.MEDIUM}
