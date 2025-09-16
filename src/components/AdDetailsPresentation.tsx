@@ -70,8 +70,8 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
       <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
         <Wrapper>
           <DigiTypography afVariation={TypographyVariation.LARGE}>
-            <h1>{ad.headline}</h1>
-            <h2>{ad.employer.name}</h2>
+            <h2>{ad.headline}</h2>
+            <h3>{ad.employer.name}</h3>
           </DigiTypography>
 
           <DigiLayoutContainer af-margin-all>
@@ -211,7 +211,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
 
               <RightSection>
                 <DigiTypography afVariation={TypographyVariation.SMALL}>
-                  <h3>Tjänstbeskrivning</h3>
+                  <h4>Tjänstbeskrivning</h4>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: ad.description.text_formatted?.replace(

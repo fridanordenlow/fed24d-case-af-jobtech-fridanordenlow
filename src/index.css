@@ -43,7 +43,7 @@
     color: #ebda39;
     background-color: #2d2b2b;
     border: 3px dashed #808080;
-    border-radius: 3px;
+    border-radius: 2px;
   }
 
   /* input - doesn't work */
@@ -52,50 +52,28 @@
     border-color: #808080;
   }
 
-  /* heading styling */
-  /* digi-typography {
-    h1 {
-      font-family: 'Press Start 2P', system-ui;
-      /* font-family: 'Orbitron', sans-serif; */
-  /* font-weight: 500; */
-  /* font-size: 1.5rem; */
-  /* color: #a491e6;
-    }
-
-    h2 {
-      font-family: 'Source Code Pro', monospace;
-      color: #ef5c74;
-    }
-
-    h3 {
-      font-family: 'Source Code Pro', monospace;
-
-      color: #ef5c74;
-    }
-  }  */
-
   h1 {
     font-family: 'Press Start 2P', system-ui;
     /* font-family: 'Orbitron', sans-serif; */
-    /* font-weight: 500; */
-    /* font-size: 1.5rem; */
     color: #a491e6;
   }
 
   h2 {
-    font-family: 'Source Code Pro', monospace;
-    color: #ef5c74;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 1.2rem;
+    /* font-family: 'Orbitron', sans-serif; */
+    color: #a491e6;
+    /* color: #ef5c74; */
   }
 
   h3 {
     font-family: 'Source Code Pro', monospace;
-
     color: #ef5c74;
   }
 
-  /*header styling*/
-  .sc-digi-layout-block-h .digi-layout-block--primary.sc-digi-layout-block {
-    --digi--layout-block--background--primary: black;
+  h4 {
+    font-family: 'Source Code Pro', monospace;
+    color: #ef5c74;
   }
 
   /*footer styling*/
@@ -125,13 +103,4 @@ main {
   width: 100%;
   margin-bottom: 1rem;
   min-height: 58.3dvh; /* Temporary to fill out page, couldn't make root take up 100% height*/
-}
-
-header {
-  background-color: lightblue;
-  margin-bottom: 1rem;
-}
-
-footer {
-  background-color: lightgrey;
 }
