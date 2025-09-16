@@ -20,6 +20,7 @@ export const SearchForm = () => {
 
   const handleSearch = async (e: CustomEvent<string>) => {
     const searchValue = e.detail;
+
     setLoading(true);
     setSearchQuery(searchValue);
     setError(null);
@@ -42,6 +43,22 @@ export const SearchForm = () => {
     setUserInput(value);
   };
 
+  // const handleFilter = async (e: CustomEvent) => {
+  //   console.log(e.detail.listItems, e.detail.checked);
+  //   switch (e.detail.checked[0]) {
+  //     case 'omr1':
+  //       setFilterInput('municipality=AvNB_uwa_6n6&');
+  //       console.log(filterInput + currentSearch);
+  //       break;
+  //     case 'omr2':
+  //       setFilterInput('municipality=PVZL_BQT_XtL&');
+  //       break;
+  //     case 'omr3':
+  //       setFilterInput('municipality=oYPt_yRA_Smm&');
+  //       break;
+  //   }
+  // };
+
   return (
     <>
       <DigiLayoutContainer
@@ -63,16 +80,17 @@ export const SearchForm = () => {
           //     setUserInput(inputValue);
           //   }}
         ></DigiFormInputSearch>
-        <DigiFormFilter
-          afFilterButtonText="Filter 1"
+        {/* <DigiFormFilter
+          afFilterButtonText="Filter"
           afSubmitButtonText="Filtrera"
           afName="Legend text"
+          onAfSubmitFilter={handleFilter}
           afListItems={[
-            { id: 'omr1', label: 'Område 1' },
-            { id: 'omr2', label: 'Område 2' },
-            { id: 'omr3', label: 'Område 3' },
+            { id: 'omr1', label: 'Stockholm' },
+            { id: 'omr2', label: 'Göteborg' },
+            { id: 'omr3', label: 'Malmö' },
           ]}
-        />
+        /> */}
       </DigiLayoutContainer>
     </>
   );
