@@ -18,7 +18,7 @@ export const AdsPresentation = () => {
           key={ad.id}
           afHeading={ad.headline}
           afHeadingLevel={InfoCardMultiHeadingLevel.H3}
-          afType={InfoCardMultiType.RELATED}
+          afType={InfoCardMultiType.ENTRY}
           afLinkHref={`/ads/${ad.id}`}
         >
           <DigiTypography>

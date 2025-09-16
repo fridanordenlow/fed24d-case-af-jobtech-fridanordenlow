@@ -2,85 +2,128 @@
 @import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
 
 :root {
-  height: 100%;
+  /* Variabels */
 
-  /* --digi--layout-container: black; */
-
-  /* containers bakgrundsfärg */
+  /* containers */
+  --digi--layout-block--background--tertiary: #2d2b2b;
   --digi--color--background--primary: #2d2b2b;
 
-  /* body bakgrundsfärg */
-  .sc-digi-layout-block-h {
-    --digi--layout-block--background--tertiary: #2d2b2b;
-  }
+  /* text */
+  --digi--color--text--primary: #dcdbdb;
 
-  /* text color */
-  --digi--color--text--primary: rgb(220, 219, 219);
-
-  /* button background color - why red marked?? */
-  --digi--button--color--background--primary--default: #2d2b2b;
-
-  /* ad text color */
-  .sc-digi-info-card-multi-h
-    .digi-info-card-multi__link.sc-digi-info-card-multi {
-    color: #ef5c74;
-  }
-
-  /* ad border color - why red marked?? */
+  /* info card bakgrund och border */
+  --digi--info-card--background-color--primary: gray;
   --digi--color--border--secondary: #808080;
 
-  /*  
-  --digi--button--color--background--primary--default: rgb(0, 47, 255);
+  /* --digi--button--color--background--primary--default: rgb(0, 47, 255);
   --digi--button--color--background--primary--hover: yellow;
-  --digi--button--color--background--primary--focus:red;
-  --digi--button--color--background--primary--active:green;
-  */
+  --digi--button--color--background--primary--focus: red;
+  --digi--button--color--background--primary--active: green; */
+}
 
-  /* button styling 
+/* ? */
+.sc-digi-layout-block-h {
+  --digi--layout-block--background--primary: var(
+    --digi--color--background--primary
+  );
+  --digi--layout-block--background--secondary: var(
+    --digi--color--background--secondary
+  );
+  --digi--layout-block--background--tertiary: var(
+    --digi--color--background--primary
+  );
+  --digi--layout-block--background--symbol: var(
+    --digi--color--background--neutral-5
+  );
+  --digi--layout-block--background--profile: var(
+    --digi--color--background--inverted-1
+  );
+}
+
+/* button styling 
   - TODO: hover button styling ! */
-  .sc-digi-button-h .digi-button.sc-digi-button {
-    font-family: 'Source Code Pro', monospace;
-    color: #ebda39;
-    background-color: #2d2b2b;
-    border: 3px dashed #808080;
-    border-radius: 2px;
-  }
+.sc-digi-button-h .digi-button.sc-digi-button {
+  font-family: 'Source Code Pro', monospace;
+  color: #ebda39;
+  background-color: #2d2b2b;
+  border: 3px dashed #808080;
+  border-radius: 3px;
+}
 
-  /* input - doesn't work */
-  .digi-form-input__input .sc-digi-form-input {
-    border: 3px dashed #808080;
-    border-color: #808080;
-  }
+/* input  */
+.digi-form-input__input.sc-digi-form-input {
+  font-family: 'Source Code Pro', monospace;
+  background-color: transparent;
+  /* background-color: #dcdbdb; */
+  color: #dcdbdb;
+  border: 3px dashed #808080;
+  border-radius: 3px;
+  outline: none;
+  /* border: 3px dashed #808080;
+  border-color: #808080; */
+}
 
-  h1 {
-    font-family: 'Press Start 2P', system-ui;
-    /* font-family: 'Orbitron', sans-serif; */
-    color: #a491e6;
-  }
+.digi-form-input__input.sc-digi-form-input:focus {
+  border-color: #a491e6;
+  outline: none;
+  box-shadow: none;
+}
 
-  h2 {
-    font-family: 'Press Start 2P', system-ui;
-    font-size: 1.2rem;
-    /* font-family: 'Orbitron', sans-serif; */
-    color: #a491e6;
-    /* color: #ef5c74; */
-  }
+/* info card multi text color */
+.sc-digi-info-card-multi-h .digi-info-card-multi__link.sc-digi-info-card-multi {
+  font-family: 'Source Code Pro', monospace;
+  text-decoration: 2px underline #a491e6;
+  line-height: normal;
+  color: #a491e6;
+}
 
-  h3 {
-    font-family: 'Source Code Pro', monospace;
-    color: #ef5c74;
-  }
+.sc-digi-info-card-multi-h {
+  border-bottom: 3px dashed #dcdbdb;
+  padding-bottom: 0.5rem;
+  display: block;
+}
 
-  h4 {
-    font-family: 'Source Code Pro', monospace;
-    color: #ef5c74;
-  }
+body {
+  margin: 0;
+  background-color: var(--digi--color--background--primary);
+}
 
-  /*footer styling*/
-  .sc-digi-footer-h {
-    --digi--color--background--inverted-1: green;
-    --digi--color--text--inverted: black;
-    /*
+main {
+  flex: 1;
+  width: 100%;
+  margin-bottom: 1rem;
+  min-height: 58.3dvh; /* Temporary to fill out page, couldn't make root take up 100% height*/
+}
+
+h1 {
+  font-family: 'Press Start 2P', system-ui;
+  /* font-family: 'Orbitron', sans-serif; */
+  color: #a491e6;
+}
+
+h2 {
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 1.2rem;
+  /* font-family: 'Orbitron', sans-serif; */
+  color: #a491e6;
+  /* color: #ef5c74; */
+}
+
+h3 {
+  font-family: 'Source Code Pro', monospace;
+  color: #ef5c74;
+}
+
+h4 {
+  font-family: 'Source Code Pro', monospace;
+  color: #ef5c74;
+}
+
+/*footer styling*/
+.sc-digi-footer-h {
+  --digi--color--background--inverted-1: green;
+  --digi--color--text--inverted: black;
+  /*
     --digi--global--typography--font-family--default
     --digi--typography--body--font-size--desktop
     --digi--typography--description--font-weight--desktop
@@ -91,16 +134,4 @@
     --digi--container-gutter--largest
     --digi--container-gutter--large
     */
-  }
-}
-
-body {
-  margin: 0;
-}
-
-main {
-  flex: 1;
-  width: 100%;
-  margin-bottom: 1rem;
-  min-height: 58.3dvh; /* Temporary to fill out page, couldn't make root take up 100% height*/
 }

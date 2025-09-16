@@ -8,7 +8,7 @@ import {
 import {
   DigiLayoutContainer,
   DigiFormInputSearch,
-  DigiFormFilter,
+  // DigiFormFilter,
 } from '@digi/arbetsformedlingen-react';
 import { getAds } from '../services/adService';
 import { useAdContext } from '../contexts/useAdContext';
