@@ -48,6 +48,11 @@
     border-radius: 2px;
   }
 
+  /*skapar lite mellanrum mellan sökruta och knapp*/
+  .digi-form-input__input.sc-digi-form-input {
+    margin-right: 0.5em;
+  }
+
   /* input - doesn't work */
   .digi-form-input__input .sc-digi-form-input {
     border: 3px dashed #808080;
