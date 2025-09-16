@@ -44,3 +44,9 @@ export const getLatestAds = async () => {
 
   return data.hits;
 };
+
+export const getTotalPos = async () => {
+  const data = await get<APIResponse>(`${BASE_URL}${SEARCH}`);
+
+  return data.total;
+};
