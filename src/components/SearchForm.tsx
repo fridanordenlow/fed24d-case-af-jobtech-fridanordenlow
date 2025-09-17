@@ -9,12 +9,18 @@ import {
   DigiLayoutContainer,
   DigiFormInputSearch,
 } from '@digi/arbetsformedlingen-react';
-import { getAds } from '../services/adService';
+import { getAdsNew } from '../services/adService';
 import { useAdContext } from '../contexts/useAdContext';
 
 export const SearchForm = () => {
-  const { setAds, searchQuery, setSearchQuery, setLoading, setError } =
-    useAdContext(); // Custom hook for context
+  const {
+    setAds,
+    searchQuery,
+    setSearchQuery,
+    setLoading,
+    setError,
+    setCurrentTotal,
+  } = useAdContext(); // Custom hook for context
   const [userInput, setUserInput] = useState(searchQuery);
 
   const handleSearch = async (e: CustomEvent<string>) => {
@@ -24,8 +30,9 @@ export const SearchForm = () => {
     setError(null);
 
     try {
-      const results = await getAds(searchValue);
-      setAds(results);
+      const results = await getAdsNew(searchValue, 0, 100);
+      setAds(results.ads);
+      setCurrentTotal(results.totalHits.value);
     } catch (err) {
       console.error(err);
       setError('Något gick fel, försök igen.');

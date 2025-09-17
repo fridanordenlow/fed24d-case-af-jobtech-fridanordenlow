@@ -14,11 +14,16 @@ import { AdsPagination } from '../components/AdsPagination';
 
 export const Ads = () => {
   const loaderData = useLoaderData<AdsLoader>(); // Get initial data from loader
-  const { ads, setAds, loading } = useAdContext(); // Custom hook for context
+  const { ads, setAds, loading, setCurrentTotal } = useAdContext(); // Custom hook for context
 
   useEffect(() => {
     const setInitialAds = () => {
       setAds(loaderData.ads);
+      if (loaderData.total.value > 100) {
+        setCurrentTotal(100);
+      } else {
+        setCurrentTotal(Math.ceil(loaderData.total.value / 10));
+      }
     };
 
     if (!loaderData?.ads.length || ads.length > 0) return;
