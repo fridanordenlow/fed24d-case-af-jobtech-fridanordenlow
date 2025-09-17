@@ -27,9 +27,11 @@ export const Ads = () => {
   });
 
   return (
-    <DigiLayoutContainer afNoGutter afVerticalPadding>
+    <DigiLayoutContainer afNoGutter>
       <DigiTypography>
-        <h2>Search and Result</h2>
+        <DigiLayoutContainer>
+          <h2>Jobbannonser</h2>
+        </DigiLayoutContainer>
       </DigiTypography>
       <SearchForm />
       <AdsPresentation />

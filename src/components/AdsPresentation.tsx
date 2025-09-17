@@ -12,6 +12,7 @@ export const AdsPresentation = () => {
   const { ads, currentPage } = useAdContext(); // Custom hook to get ads from AdContext
   const startIndex = (currentPage - 1) * 10;
   const currentAds = ads.slice(startIndex, startIndex + 10);
+  
   const afHTML = (
     <DigiTypography>
       {currentAds.map((ad) => {
@@ -20,7 +21,7 @@ export const AdsPresentation = () => {
             key={ad.id}
             afHeading={ad.headline}
             afHeadingLevel={InfoCardMultiHeadingLevel.H3}
-            afType={InfoCardMultiType.RELATED}
+            afType={InfoCardMultiType.ENTRY}
             afLinkHref={`/ads/${ad.id}`}
           >
             <h3>{ad.employer?.name}</h3>
@@ -42,6 +43,7 @@ export const AdsPresentation = () => {
       })}
     </DigiTypography>
   );
+  
   return (
     <>
       {afHTML}
