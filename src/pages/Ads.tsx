@@ -11,11 +11,10 @@ import { AdsPresentation } from '../components/AdsPresentation';
 import { useAdContext } from '../contexts/useAdContext';
 import type { AdsLoader } from '../loaders/adsLoader';
 import { AdsPagination } from '../components/AdsPagination';
-// import styled from 'styled-components';
 
 export const Ads = () => {
   const loaderData = useLoaderData<AdsLoader>(); // Get initial data from loader
-  const { ads, setAds, setCurrentTotal, setCurrentPage } = useAdContext(); // Custom hook for context
+  const { ads, setAds, setCurrentTotal, setCurrentPage } = useAdContext();
 
   useEffect(() => {
     const setInitialAds = () => {
@@ -39,26 +38,24 @@ export const Ads = () => {
         <DigiLayoutContainer>
           <h2>Jobbannonser</h2>
         </DigiLayoutContainer>
+
+        <SearchForm />
+        <div>
+          {/* <DigiLayoutContainer afMarginBottom>
+            <p>Visar resultat för '{searchQuery}'</p>
+          </DigiLayoutContainer> */}
+          <AdsPresentation />
+          {/* {loading && (
+            <DigiLoaderSpinner
+              afSize={LoaderSpinnerSize.MEDIUM}
+              afText="Laddar"
+            ></DigiLoaderSpinner>
+          )} */}
+        </div>
+        <div>
+          <AdsPagination />
+        </div>
       </DigiTypography>
-      <SearchForm />
-      <AdsPresentation />
-      {/* {loading && (
-        <DigiLoaderSpinner
-          afSize={LoaderSpinnerSize.MEDIUM}
-          afText="Laddar"
-        ></DigiLoaderSpinner>
-      )} */}
-      {/* <PaginationWrapper> */}
-      <AdsPagination />
-      {/* </PaginationWrapper> */}
     </DigiLayoutContainer>
   );
 };
-
-// const PaginationWrapper = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   width: fit-content;
-//   padding: 0;
-//   margin-top: 40px;
-// `;
