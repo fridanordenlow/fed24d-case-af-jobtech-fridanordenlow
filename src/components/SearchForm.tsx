@@ -32,7 +32,11 @@ export const SearchForm = () => {
     try {
       const results = await getAdsNew(searchValue, 0, 100);
       setAds(results.ads);
-      setCurrentTotal(results.totalHits.value);
+      if (results.totalHits.value > 100) {
+        setCurrentTotal(100);
+      } else {
+        setCurrentTotal(Math.ceil(results.totalHits.value / 10));
+      }
     } catch (err) {
       console.error(err);
       setError('Något gick fel, försök igen.');

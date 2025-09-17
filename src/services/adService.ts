@@ -9,9 +9,10 @@ const SEARCH = 'search?occupation-group=DJh5_yyF_hEM';
 // occupation-group=DJh5_yyF_hEM targets jobs within the software development career.
 // offset means where to start in the list and limit is how many to fetch.
 
-export const getAds = async (searchValue: string) => {
+export const getAds = async (query: string) => {
+  const encodedQuery = encodeURIComponent(query);
   const data = await get<APIResponse>(
-    `${BASE_URL}${SEARCH}&q=${searchValue}&offset=0&limit=100`
+    `${BASE_URL}${SEARCH}&q=${encodedQuery}&offset=0&limit=100`
   ); // offset part will be dynamic so will have to be replaced
 
   return data.hits;
@@ -23,8 +24,9 @@ export const getAdsNew = async (
   offset: number,
   limit: number
 ) => {
+  const encodedQuery = encodeURIComponent(query);
   const response = await get<APIResponse>(
-    `${BASE_URL}${SEARCH}&q=${query}&offset=${offset}&limit=${limit}`
+    `${BASE_URL}${SEARCH}&q=${encodedQuery}&offset=${offset}&limit=${limit}`
   );
   localStorage.setItem('ads', JSON.stringify(response.hits));
 
