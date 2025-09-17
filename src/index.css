@@ -135,8 +135,13 @@ h4 {
   display: flex;
   justify-content: center;
   width: fit-content;
+  flex: 0 1 auto;
   margin: 0 auto;
   margin-top: 40px;
+}
+
+.digi-navigation-pagination__pagination {
+  margin: 0 auto;
 }
 
 /* Icons */
