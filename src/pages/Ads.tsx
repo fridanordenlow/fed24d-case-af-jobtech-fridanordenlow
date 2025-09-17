@@ -1,11 +1,11 @@
 import {
   DigiLayoutContainer,
-  DigiLoaderSpinner,
+  // DigiLoaderSpinner,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
 import { useEffect } from 'react';
 import { useLoaderData } from 'react-router';
-import { LoaderSpinnerSize } from '@digi/arbetsformedlingen';
+// import { LoaderSpinnerSize } from '@digi/arbetsformedlingen';
 import { SearchForm } from '../components/SearchForm';
 import { AdsPresentation } from '../components/AdsPresentation';
 import { useAdContext } from '../contexts/useAdContext';
@@ -15,7 +15,7 @@ import { AdsPagination } from '../components/AdsPagination';
 
 export const Ads = () => {
   const loaderData = useLoaderData<AdsLoader>(); // Get initial data from loader
-  const { ads, setAds, loading, setCurrentTotal } = useAdContext(); // Custom hook for context
+  const { ads, setAds, setCurrentTotal } = useAdContext(); // Custom hook for context
 
   useEffect(() => {
     const setInitialAds = () => {
@@ -41,12 +41,12 @@ export const Ads = () => {
       </DigiTypography>
       <SearchForm />
       <AdsPresentation />
-      {loading && (
+      {/* {loading && (
         <DigiLoaderSpinner
           afSize={LoaderSpinnerSize.MEDIUM}
           afText="Laddar"
         ></DigiLoaderSpinner>
-      )}
+      )} */}
       {/* <PaginationWrapper> */}
       <AdsPagination />
       {/* </PaginationWrapper> */}
