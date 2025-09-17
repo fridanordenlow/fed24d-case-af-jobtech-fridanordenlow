@@ -8,10 +8,19 @@ import {
   DigiIconEnvelope,
 } from '@digi/arbetsformedlingen-react';
 // import { Link } from 'react-router';
+import styled from "styled-components";
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #dcdbdb;
+  margin: 1rem 0;
+`;
 
 export const Footer = () => {
   return (
     <footer>
+      <Divider />
       <DigiFooter afVariation={FooterVariation.SMALL}>
         <div slot="content-top">
           <DigiFooterCard afType={FooterCardVariation.ICON}>

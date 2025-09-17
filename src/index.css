@@ -8,6 +8,19 @@
   --digi--layout-block--background--tertiary: #2d2b2b;
   --digi--color--background--primary: #2d2b2b;
 
+  /* body bakgrundsfärg */
+  .sc-digi-layout-block-h {
+    --digi--layout-block--background--tertiary: #2d2b2b;
+  }
+
+  --digi--color--background--secondary: #2d2b2b;
+
+  /* text color */
+  --digi--color--text--primary: #dcdbdb;
+
+  /* button background color - why red marked?? */
+  --digi--button--color--background--primary--default: #2d2b2b;
+
   /* text */
   --digi--color--text--primary: #dcdbdb;
 
@@ -42,6 +55,66 @@
 
 /* button styling 
   - TODO: hover button styling ! */
+  .sc-digi-button-h .digi-button.sc-digi-button {
+    font-family: 'Source Code Pro', monospace;
+    color: #ebda39;
+    background-color: #2d2b2b;
+    border: 3px dashed #808080;
+    border-radius: 2px;
+  }
+
+  /*skapar lite mellanrum mellan sökruta och knapp*/
+  .digi-form-input__input.sc-digi-form-input {
+    margin-right: 0.5em;
+  }
+
+  /* input - doesn't work */
+  .digi-form-input__input .sc-digi-form-input {
+    border: 3px dashed #808080;
+    border-color: #808080;
+  }
+
+  h1 {
+    font-family: 'Press Start 2P', system-ui;
+    /* font-family: 'Orbitron', sans-serif; */
+    color: #a491e6;
+  }
+
+  h2 {
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 1.2rem;
+    /* font-family: 'Orbitron', sans-serif; */
+    color: #a491e6;
+    /* color: #ef5c74; */
+  }
+
+  h3 {
+    font-family: 'Source Code Pro', monospace;
+    color: #ef5c74;
+  }
+
+  h4 {
+    font-family: 'Source Code Pro', monospace;
+    color: #ef5c74;
+  }
+
+  /*footer styling*/
+  .sc-digi-footer-h {
+    --digi--color--background--inverted-1: #2d2b2b;
+    /*--digi--color--text--inverted: black; */
+    /*
+    --digi--global--typography--font-family--default
+    --digi--typography--body--font-size--desktop
+    --digi--typography--description--font-weight--desktop
+    --digi--color--text--inverted
+    --digi--color--text--inverted
+    --digi--color--text--inverted
+    --digi--color--text--inverted
+    --digi--container-gutter--largest
+    --digi--container-gutter--large
+    */
+  }
+
 .sc-digi-button-h .digi-button.sc-digi-button {
   font-family: 'Source Code Pro', monospace;
   color: #ebda39;
