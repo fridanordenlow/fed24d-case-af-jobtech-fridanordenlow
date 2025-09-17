@@ -82,7 +82,8 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                         <p>
                           <strong>Yrkeserfarenhet krävs:</strong>
                           {ad.must_have.work_experiences.map((exp, i) => (
-                            <div key={i}>{exp.label}</div>
+                            <div key={exp.label}>{exp.label}</div>
+
                           ))}
                         </p>
                       )}
@@ -93,7 +94,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                           <strong>Meriterande yrkeserfarenhet:</strong>
 
                           {ad.nice_to_have.work_experiences.map((exp, i) => (
-                            <div key={i}>{exp.label}</div>
+                            <div key={exp.label}>{exp.label}</div>
                           ))}
                         </p>
                       )}
