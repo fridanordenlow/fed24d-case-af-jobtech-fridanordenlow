@@ -1,20 +1,21 @@
 import {
   DigiLayoutContainer,
-  DigiLoaderSpinner,
+  // DigiLoaderSpinner,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
 import { useEffect } from 'react';
 import { useLoaderData } from 'react-router';
-import { LoaderSpinnerSize } from '@digi/arbetsformedlingen';
+// import { LoaderSpinnerSize } from '@digi/arbetsformedlingen';
 import { SearchForm } from '../components/SearchForm';
 import { AdsPresentation } from '../components/AdsPresentation';
 import { useAdContext } from '../contexts/useAdContext';
 import type { AdsLoader } from '../loaders/adsLoader';
 import { AdsPagination } from '../components/AdsPagination';
+// import styled from 'styled-components';
 
 export const Ads = () => {
   const loaderData = useLoaderData<AdsLoader>(); // Get initial data from loader
-  const { ads, setAds, loading, setCurrentTotal } = useAdContext(); // Custom hook for context
+  const { ads, setAds, setCurrentTotal } = useAdContext(); // Custom hook for context
 
   useEffect(() => {
     const setInitialAds = () => {
@@ -40,13 +41,23 @@ export const Ads = () => {
       </DigiTypography>
       <SearchForm />
       <AdsPresentation />
-      <AdsPagination />
-      {loading && (
+      {/* {loading && (
         <DigiLoaderSpinner
           afSize={LoaderSpinnerSize.MEDIUM}
           afText="Laddar"
         ></DigiLoaderSpinner>
-      )}
+      )} */}
+      {/* <PaginationWrapper> */}
+      <AdsPagination />
+      {/* </PaginationWrapper> */}
     </DigiLayoutContainer>
   );
 };
+
+// const PaginationWrapper = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   width: fit-content;
+//   padding: 0;
+//   margin-top: 40px;
+// `;

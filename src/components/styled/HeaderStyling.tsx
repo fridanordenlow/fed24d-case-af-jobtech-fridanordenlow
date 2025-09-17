@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
 
   @media (max-width: 770px) {
     flex-direction: column;
-    align-items: flex-start; /* så det inte centrar allt horisontellt */
+    align-items: flex-start;
     gap: 1rem;
   }
 `;
