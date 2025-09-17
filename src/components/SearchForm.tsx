@@ -35,7 +35,7 @@ export const SearchForm = () => {
       if (results.totalHits.value > 100) {
         setCurrentTotal(100);
       } else {
-        setCurrentTotal(Math.ceil(results.totalHits.value / 10));
+        setCurrentTotal(results.totalHits.value);
       }
     } catch (err) {
       console.error(err);

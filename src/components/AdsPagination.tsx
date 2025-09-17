@@ -28,7 +28,7 @@ export const AdsPagination = () => {
       afInitActive-page={1}
       afCurrentResultStart={startValue}
       afCurrentResultEnd={startValue + 9}
-      afTotalResults={100}
+      afTotalResults={currentTotal}
       afResultName="annonser"
       onAfOnReady={handlePagination}
       onAfOnPageChange={handlePagination}
