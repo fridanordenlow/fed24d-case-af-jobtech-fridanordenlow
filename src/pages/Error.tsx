@@ -8,7 +8,7 @@ import {
 export const Error = () => {
   return (
     <DigiNotificationErrorPage
-      afHttpStatusCode={ErrorPageStatusCodes.FORBIDDEN}
+      afHttpStatusCode={ErrorPageStatusCodes.NOT_FOUND}
     >
       <ul slot="links">
         <li>
