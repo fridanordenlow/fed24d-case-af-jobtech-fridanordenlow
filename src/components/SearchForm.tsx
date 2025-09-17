@@ -8,7 +8,6 @@ import {
 import {
   DigiLayoutContainer,
   DigiFormInputSearch,
-  // DigiFormFilter,
 } from '@digi/arbetsformedlingen-react';
 import { getAds } from '../services/adService';
 import { useAdContext } from '../contexts/useAdContext';
@@ -20,7 +19,6 @@ export const SearchForm = () => {
 
   const handleSearch = async (e: CustomEvent<string>) => {
     const searchValue = e.detail;
-
     setLoading(true);
     setSearchQuery(searchValue);
     setError(null);

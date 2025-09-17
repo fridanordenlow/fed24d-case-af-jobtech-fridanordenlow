@@ -10,6 +10,8 @@ type AdContextType = {
   setLoading: (loading: boolean) => void;
   error: string | null;
   setError: (error: string | null) => void;
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
 
   // lägg till totalResults ?
   // lägg till offset ???
