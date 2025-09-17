@@ -98,22 +98,6 @@
     color: #ef5c74;
   }
 
-  /*footer styling*/
-  .sc-digi-footer-h {
-    --digi--color--background--inverted-1: #2d2b2b;
-    /*--digi--color--text--inverted: black; */
-    /*
-    --digi--global--typography--font-family--default
-    --digi--typography--body--font-size--desktop
-    --digi--typography--description--font-weight--desktop
-    --digi--color--text--inverted
-    --digi--color--text--inverted
-    --digi--color--text--inverted
-    --digi--color--text--inverted
-    --digi--container-gutter--largest
-    --digi--container-gutter--large
-    */
-  }
 
 .sc-digi-button-h .digi-button.sc-digi-button {
   font-family: 'Source Code Pro', monospace;
@@ -208,3 +192,21 @@ h4 {
     --digi--container-gutter--large
     */
 }
+
+  /*footer styling*/
+  .sc-digi-footer-h {
+    --digi--color--background--inverted-1: #2d2b2b;
+      --digi--color--text--inverted: rgb(218, 217, 217);
+    /*--digi--color--text--inverted: black; */
+    /*
+    --digi--global--typography--font-family--default
+    --digi--typography--body--font-size--desktop
+    --digi--typography--description--font-weight--desktop
+    --digi--color--text--inverted
+    --digi--color--text--inverted
+    --digi--color--text--inverted
+    --digi--color--text--inverted
+    --digi--container-gutter--largest
+    --digi--container-gutter--large
+    */
+  }

@@ -9,7 +9,6 @@ export const Layout = () => {
     <>
       <DigiLayoutBlock afVariation={LayoutBlockVariation.TERTIARY}>
         <DigiLayoutBlock afVariation={LayoutBlockVariation.SECONDARY}>
-
         <Header />
         <main>
           <Outlet />

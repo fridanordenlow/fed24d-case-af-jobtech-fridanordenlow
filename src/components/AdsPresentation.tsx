@@ -17,8 +17,9 @@ export const AdsPresentation = () => {
     <DigiTypography>
       {currentAds.map((ad) => {
         return (
+          <div key={ad.id}>
           <DigiInfoCardMulti
-            key={ad.id}
+//            key={ad.id}
             afHeading={ad.headline}
             afHeadingLevel={InfoCardMultiHeadingLevel.H3}
             afType={InfoCardMultiType.ENTRY}
@@ -39,6 +40,7 @@ export const AdsPresentation = () => {
               </>
             )}{' '}
           </DigiInfoCardMulti>
+          </div>
         );
       })}
     </DigiTypography>
