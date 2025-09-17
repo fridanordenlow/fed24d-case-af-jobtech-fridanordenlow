@@ -10,6 +10,7 @@ export const AdProvider = ({ children }: AdProviderProps) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentTotal, setCurrentTotal] = useState(0);
 
   return (
     <AdContext.Provider
@@ -24,6 +25,8 @@ export const AdProvider = ({ children }: AdProviderProps) => {
         setError,
         currentPage,
         setCurrentPage,
+        currentTotal,
+        setCurrentTotal,
       }}
     >
       {children}
