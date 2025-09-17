@@ -20,7 +20,7 @@ export const LatestAdsPresentation = () => {
 
   const afHTML = (
     <DigiTypography>
-      <h2>Senaste publicerade annonser</h2>
+      <h2>Nypublicerade annonser</h2>
       <DigiLayoutColumns
         afElement={LayoutColumnsElement.DIV}
         afVariation={
@@ -36,7 +36,7 @@ export const LatestAdsPresentation = () => {
             afLinkHref={`/ads/${a.id}`}
             key={a.id}
           >
-            <p>{a.employer.name}</p>
+            <h3 style={{ color: '#dcdbdb' }}>{a.employer.name}</h3>
           </DigiInfoCardMulti>
         ))}
       </DigiLayoutColumns>

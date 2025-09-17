@@ -11,6 +11,7 @@ import { AdsPresentation } from '../components/AdsPresentation';
 import { useAdContext } from '../contexts/useAdContext';
 import type { AdsLoader } from '../loaders/adsLoader';
 import { AdsPagination } from '../components/AdsPagination';
+// import styled from 'styled-components';
 
 export const Ads = () => {
   const loaderData = useLoaderData<AdsLoader>(); // Get initial data from loader
@@ -40,13 +41,23 @@ export const Ads = () => {
       </DigiTypography>
       <SearchForm />
       <AdsPresentation />
-      <AdsPagination />
       {loading && (
         <DigiLoaderSpinner
           afSize={LoaderSpinnerSize.MEDIUM}
           afText="Laddar"
         ></DigiLoaderSpinner>
       )}
+      {/* <PaginationWrapper> */}
+      <AdsPagination />
+      {/* </PaginationWrapper> */}
     </DigiLayoutContainer>
   );
 };
+
+// const PaginationWrapper = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   width: fit-content;
+//   padding: 0;
+//   margin-top: 40px;
+// `;

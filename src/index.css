@@ -1,33 +1,28 @@
 @import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
 @import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
 
+/* --- Variabels --- */
 :root {
-  /* Variabels */
-
+  /* Colors */
   --digi--color--background--primary: #2d2b2b;
   --digi--color--background--secondary: #2d2b2b;
 
-  --digi--layout-block--background--tertiary: #808080;
+  /* --digi--layout-block--background--tertiary: #2d2b2b; */
 
-  /* text color */
+  /* --digi--info-card--background-color--primary: gray; */
+
   --digi--color--text--primary: #dcdbdb;
-  /* --digi--footer--text--color: #dcdbdb; */
 
-  /* button background color */
-  /* --digi--button--color--background--primary--default: #2d2b2b; */
-
-  /* info card bakgrund och border */
-  --digi--info-card--background-color--primary: gray;
   --digi--color--border--secondary: #808080;
 
-  /* can probably be deleted */
-  /* --digi--button--color--background--primary--default: rgb(0, 47, 255);
-  --digi--button--color--background--primary--hover: yellow;
-  --digi--button--color--background--primary--focus: red;
-  --digi--button--color--background--primary--active: green; */
+  /* Layout */
+  --digi--container-width--medium: 48rem;
+  --digi--container-width--large: 50rem;
+  --digi--container-width--larger: 52rem;
+  --digi--container-width--largest: 64rem;
 }
 
-/* Base styles */
+/* --- Base styles --- */
 body {
   margin: 0;
   background-color: var(--digi--color--background--primary);
@@ -37,10 +32,11 @@ main {
   flex: 1;
   width: 100%;
   margin-bottom: 1rem;
-  min-height: 58.3dvh; /* Temporary to fill out page, couldn't make root take up 100% height */
+  min-height: 100dvh;
+  /* min-height: 58.3dvh; Temporary to fill out page, couldn't make root take up 100% height */
 }
 
-/* Typography */
+/* --- Typography --- */
 h1 {
   font-family: 'Press Start 2P', system-ui;
   color: #a491e6;
@@ -62,24 +58,18 @@ h4 {
   color: #ef5c74;
 }
 
-/* Components */
+/* --- Components --- */
+
+/* Footer */
+.sc-digi-footer-h {
+  --digi--color--background--inverted-1: #2d2b2b;
+  --digi--footer--text--color: #dcdbdb;
+}
 
 /* Layout block */
 .sc-digi-layout-block-h {
-  --digi--layout-block--background--primary: var(
-    --digi--color--background--primary
-  );
-  --digi--layout-block--background--secondary: var(
-    --digi--color--background--secondary
-  );
   --digi--layout-block--background--tertiary: var(
     --digi--color--background--primary
-  );
-  --digi--layout-block--background--symbol: var(
-    --digi--color--background--neutral-5
-  );
-  --digi--layout-block--background--profile: var(
-    --digi--color--background--inverted-1
   );
 }
 
@@ -95,7 +85,7 @@ h4 {
 
 .sc-digi-button-h .digi-button.sc-digi-button:hover {
   background-color: #3a3838;
-  color: #ffffff;
+  color: #dcdbdb;
   border: 3px dashed #ebda39;
   cursor: pointer;
   border-radius: 3px;
@@ -103,6 +93,7 @@ h4 {
 
 /* Inputs */
 .digi-form-input__input.sc-digi-form-input {
+  max-width: 500px;
   margin-right: 0.5em;
   font-family: 'Source Code Pro', monospace;
   background-color: transparent;
@@ -118,34 +109,56 @@ h4 {
   box-shadow: none;
 }
 
-/* Footer */
-.sc-digi-footer-h {
-  --digi--color--background--inverted-1: #2d2b2b;
-  --digi--footer--text--color: #dcdbdb;
-  /*--digi--color--text--inverted: black; */
-  /*
-    --digi--global--typography--font-family--default
-    --digi--typography--body--font-size--desktop
-    --digi--typography--description--font-weight--desktop
-    --digi--color--text--inverted
-    --digi--color--text--inverted
-    --digi--color--text--inverted
-    --digi--color--text--inverted
-    --digi--container-gutter--largest
-    --digi--container-gutter--large
-    */
-}
-
 /* Info card multi */
 .sc-digi-info-card-multi-h {
+  display: block;
   border-bottom: 3px dashed #dcdbdb;
   padding-bottom: 0.5rem;
-  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.sc-digi-info-card-multi-h .digi-info-card-multi__link.sc-digi-info-card-multi {
+.digi-info-card-multi__link.sc-digi-info-card-multi {
   font-family: 'Source Code Pro', monospace;
-  text-decoration: 2px underline #a491e6;
   line-height: normal;
   color: #a491e6;
+  text-decoration: 2px underline #a491e6;
+}
+
+.digi-info-card-multi__link.sc-digi-info-card-multi:hover {
+  color: #ebda39;
+  text-decoration-color: #ebda39;
+  cursor: pointer;
+}
+
+/* Pagination */
+.sc-digi-navigation-pagination-h {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+/* Icons */
+.digi-icon-search__shape {
+  color: #dcdbdb;
+}
+
+.digi-icon-chevron-right__shape {
+  color: #ebda39;
+}
+
+.digi-icon-chevron-left__shape {
+  color: #ebda39;
+}
+
+/* Error page */
+.sc-digi-notification-error-page {
+  align-items: center;
+  font-family: 'Source Code Pro', monospace;
+  color: #dcdbdb;
+}
+
+.sc-digi-notification-error-page a:hover {
+  text-decoration: 2px dashed underline #ebda39;
 }

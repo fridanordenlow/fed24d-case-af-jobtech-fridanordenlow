@@ -12,16 +12,10 @@ export const Error = () => {
     >
       <ul slot="links">
         <li>
-          <DigiLinkInternal afHref="/" afVariation="small">
-            Till startsidan
+          <DigiLinkInternal afHref="/">
+            <span style={{ color: '#ebda39' }}>Till startsidan</span>
           </DigiLinkInternal>
         </li>
-        {/* Lägg till fler länkar eventuellt */}
-        {/* <li>
-          <DigiLinkInternal afHref="/" afVariation="small">
-            Till startsidan
-          </DigiLinkInternal>
-        </li> */}
       </ul>
     </DigiNotificationErrorPage>
   );
