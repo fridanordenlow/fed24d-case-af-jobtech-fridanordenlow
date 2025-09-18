@@ -1,29 +1,34 @@
 import {
   DigiLayoutContainer,
-  // DigiLoaderSpinner,
+  DigiLoaderSpinner,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
 import { useEffect } from 'react';
 import { useLoaderData } from 'react-router';
-// import { LoaderSpinnerSize } from '@digi/arbetsformedlingen';
+import { LoaderSpinnerSize } from '@digi/arbetsformedlingen';
 import { SearchForm } from '../components/SearchForm';
 import { AdsPresentation } from '../components/AdsPresentation';
 import { useAdContext } from '../hooks/useAdContext';
 import type { AdsLoader } from '../loaders/adsLoader';
 import { AdsPagination } from '../components/AdsPagination';
+import {
+  LoaderSpinnerWrapper,
+  // MessageWrapper,
+} from '../components/styled/Wrappers';
 
 export const Ads = () => {
-  const loaderData = useLoaderData<AdsLoader>(); // Get initial data from loader
-  const { ads, setAds, setCurrentTotal, setCurrentPage } = useAdContext();
+  const loaderData = useLoaderData<AdsLoader>();
+  const { ads, setAds, setTotalResult, setCurrentPage, loading, error } =
+    useAdContext();
 
   useEffect(() => {
     const setInitialAds = () => {
       setAds(loaderData.ads);
       setCurrentPage(1);
       if (loaderData.total.value > 100) {
-        setCurrentTotal(100);
+        setTotalResult(100);
       } else {
-        setCurrentTotal(loaderData.total.value);
+        setTotalResult(loaderData.total.value);
       }
     };
 
@@ -40,20 +45,29 @@ export const Ads = () => {
         </DigiLayoutContainer>
 
         <SearchForm />
+
         <div>
-          {/* <DigiLayoutContainer afMarginBottom>
-            <p>Visar resultat för '{searchQuery}'</p>
-          </DigiLayoutContainer> */}
-          <AdsPresentation />
-          {/* {loading && (
-            <DigiLoaderSpinner
-              afSize={LoaderSpinnerSize.MEDIUM}
-              afText="Laddar"
-            ></DigiLoaderSpinner>
+          {loading && (
+            <LoaderSpinnerWrapper>
+              <DigiLoaderSpinner
+                afSize={LoaderSpinnerSize.MEDIUM}
+                afText="Laddar annonser..."
+              />
+            </LoaderSpinnerWrapper>
+          )}
+
+          {/* {!loading && !error && ads.length === 0 && (
+            <MessageWrapper>
+              <p>Inga annonser hittades för din sökning.</p>
+            </MessageWrapper>
           )} */}
-        </div>
-        <div>
-          <AdsPagination />
+
+          {!loading && !error && ads.length > 0 && (
+            <>
+              <AdsPresentation />
+              <AdsPagination />
+            </>
+          )}
         </div>
       </DigiTypography>
     </DigiLayoutContainer>
