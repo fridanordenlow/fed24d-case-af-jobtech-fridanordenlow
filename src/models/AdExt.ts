@@ -49,17 +49,10 @@ export interface AdExt extends Ad {
     }[];
   };
 
-  // workplace_address: {
-  //   region?: string;
-  //   municipality?: string;
-  // };
-
   application_contacts?: {
     name?: string;
     description?: string;
     email?: string;
     telephone?: string;
   }[];
-
-  // publication_date?: string;
 }

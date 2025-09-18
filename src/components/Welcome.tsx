@@ -2,7 +2,7 @@ import {
   DigiLayoutContainer,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
-import styled from 'styled-components';
+import { WelcomeWrapper } from './styled/Wrappers';
 
 export const Welcome = () => {
   return (
@@ -24,9 +24,3 @@ export const Welcome = () => {
     </WelcomeWrapper>
   );
 };
-
-const WelcomeWrapper = styled.div`
-  border-bottom: 3px dashed #ebda39;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
-`;

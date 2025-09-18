@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
 
   @media (max-width: 770px) {
     flex-direction: column;
-    align-items: flex-start; /* så det inte centrar allt horisontellt */
+    align-items: flex-start;
     gap: 1rem;
   }
 `;
@@ -48,29 +48,24 @@ export const HeaderNav = styled.nav`
 
 export const StyledNavLink = styled(NavLink)`
   font-size: 1.2rem;
-  /* color: #04cf00; */
   color: #ebda39;
   text-decoration: none;
 
   &:visited {
-    /* color: #04cf00; */
     color: #ebda39;
   }
 
   &:hover {
-    /* color: #04cf00; */
     color: #ebda39;
     text-decoration: dashed underline;
   }
 
   &:focus {
-    /* outline: 2px solid #04cf00; */
     outline: 2px solid #ebda39;
     outline-offset: 4px;
   }
 
   &.active {
-    /* color: #04cf00; */
     color: #ebda39;
     font-weight: bold;
   }

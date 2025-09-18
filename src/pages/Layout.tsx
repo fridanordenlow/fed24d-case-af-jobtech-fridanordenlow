@@ -8,13 +8,11 @@ export const Layout = () => {
   return (
     <>
       <DigiLayoutBlock afVariation={LayoutBlockVariation.TERTIARY}>
-        <DigiLayoutBlock afVariation={LayoutBlockVariation.SECONDARY}>
         <Header />
         <main>
           <Outlet />
         </main>
         <Footer />
-        </DigiLayoutBlock>
       </DigiLayoutBlock>
     </>
   );

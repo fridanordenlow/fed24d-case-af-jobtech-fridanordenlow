@@ -1,5 +1,5 @@
 import type { Ad } from '../models/Ad';
-import { getAdsNew } from '../services/adService';
+import { getAds } from '../services/adService';
 
 export type AdsLoader = {
   ads: Ad[];
@@ -9,7 +9,7 @@ export type AdsLoader = {
 };
 
 export const adsLoader = async () => {
-  const data = await getAdsNew('', 0, 100);
+  const data = await getAds('', 0, 100);
 
   return { ads: data.ads, total: data.totalHits } satisfies AdsLoader;
 };

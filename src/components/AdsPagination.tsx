@@ -1,29 +1,30 @@
 import { DigiNavigationPagination } from '@digi/arbetsformedlingen-react';
-import { useLoaderData } from 'react-router';
-import { useAdContext } from '../contexts/useAdContext';
-import type { AdsLoader } from '../loaders/adsLoader';
+import { useAdContext } from '../hooks/useAdContext';
 
 export const AdsPagination = () => {
-  const loaderData = useLoaderData<AdsLoader>(); // Get initial data from loader
-  const { setCurrentPage, currentPage } = useAdContext(); // Custom hook for context
-  const startValue = currentPage * 10 - 9;
+  const { currentPage, setCurrentPage, totalResult } = useAdContext();
+  const totalPages = Math.ceil(totalResult / 10);
+  const startValue = (currentPage - 1) * 10 + 1;
+  const endValue = Math.min(startValue + 9, totalResult);
 
   const handlePagination = (e: CustomEvent) => {
-    if (e.detail == null) {
+    if (e.detail === null) {
       setCurrentPage(1);
       return;
     } else {
       setCurrentPage(e.detail);
+      console.log('pagination event:', e.detail);
     }
   };
+
   return (
     <DigiNavigationPagination
       afId="afPagination"
-      afTotalPages={10}
+      afTotalPages={totalPages}
       afInitActive-page={1}
       afCurrentResultStart={startValue}
-      afCurrentResultEnd={startValue + 9}
-      afTotalResults={100}
+      afCurrentResultEnd={endValue}
+      afTotalResults={totalResult}
       afResultName="annonser"
       onAfOnReady={handlePagination}
       onAfOnPageChange={handlePagination}

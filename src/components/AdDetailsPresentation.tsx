@@ -19,7 +19,7 @@ import {
   RightSection,
   Divider,
   InfoSection,
-} from "./styled/AdDetailsPresentationStyling";
+} from './styled/AdDetailsPresentationStyling';
 
 interface Props {
   ad: AdExt;
@@ -80,7 +80,9 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                     {ad.must_have?.work_experiences &&
                       ad.must_have.work_experiences.length > 0 && (
                         <div>
-                          <strong>Yrkeserfarenhet krävs:</strong>
+                          <p>
+                            <strong>Yrkeserfarenhet krävs:</strong>
+                          </p>
                           {ad.must_have.work_experiences.map((exp, i) => (
                             <div key={exp.label}>{exp.label}</div>
 
@@ -90,13 +92,15 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
 
                     {ad.nice_to_have?.work_experiences &&
                       ad.nice_to_have.work_experiences.length > 0 && (
-                        <p>
-                          <strong>Meriterande yrkeserfarenhet:</strong>
+                        <div>
+                          <p>
+                            <strong>Meriterande yrkeserfarenhet:</strong>
+                          </p>
 
                           {ad.nice_to_have.work_experiences.map((exp, i) => (
                             <div key={exp.label}>{exp.label}</div>
                           ))}
-                        </p>
+                        </div>
                       )}
 
                     {typeof ad.driving_license_required === 'boolean' && (
@@ -110,7 +114,9 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                   <InfoSection>
                     {ad.application_contacts?.length ? (
                       <div>
-                        <p><strong>Kontaktperson</strong></p>
+                        <p>
+                          <strong>Kontaktperson</strong>
+                        </p>
                         {ad.application_contacts.map((contact, index) => (
                           <div key={index}>
                             {contact.name && (
@@ -179,7 +185,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                       __html: ad.description.text_formatted?.replace(
                         /\r?\n/g,
                         '<br />'
-                      ), // ersätter radbrytningar
+                      ),
                     }}
                   ></p>
                 </DigiTypography>

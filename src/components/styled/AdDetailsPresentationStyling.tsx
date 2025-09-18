@@ -1,26 +1,25 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  padding: 1em;
   padding-bottom: 2em;
 `;
 
 export const FlexContainer = styled.div`
-  display: flex;
   width: 100%;
-  gap: 5rem;
+  display: flex;
+  gap: 4rem;
   margin-top: 2em;
 `;
 
 export const LeftSection = styled.section`
-  width: 25%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
 `;
 
 export const RightSection = styled.section`
-  width: 75%;
+  width: 65%;
 `;
 
 export const Divider = styled.div`

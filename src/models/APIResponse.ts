@@ -6,11 +6,3 @@ export type APIResponse = {
   };
   hits: Ad[];
 };
-
-// jobsearch API response
-// {
-//   "total": {
-//     "value": 1437
-//   },
-//   "positions": 1860,
-// ... etc

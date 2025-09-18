@@ -18,10 +18,9 @@ export const LatestAdsPresentation = () => {
   const { ads } = useLoaderData<LatestAdsLoader>();
   const isMobile = useMediaQuery('(max-width: 770px)');
 
-  const afHTML = (
+  return (
     <DigiTypography>
-
-      <h2>Senaste publicerade annonser</h2>
+      <h2>Nypublicerade annonser</h2>
       <DigiLayoutColumns
         afElement={LayoutColumnsElement.DIV}
         afVariation={
@@ -37,12 +36,37 @@ export const LatestAdsPresentation = () => {
             afLinkHref={`/ads/${a.id}`}
             key={a.id}
           >
-            <p>{a.employer.name}</p>
+            <h3 style={{ color: '#dcdbdb' }}>{a.employer.name}</h3>
           </DigiInfoCardMulti>
         ))}
       </DigiLayoutColumns>
     </DigiTypography>
   );
 
-  return <>{afHTML}</>;
+  // const afHTML = (
+  //   <DigiTypography>
+  //     <h2>Nypublicerade annonser</h2>
+  //     <DigiLayoutColumns
+  //       afElement={LayoutColumnsElement.DIV}
+  //       afVariation={
+  //         isMobile ? LayoutColumnsVariation.ONE : LayoutColumnsVariation.TWO
+  //       }
+  //       afColumnGap={LayoutColumnsGap.GAP_32}
+  //     >
+  //       {ads.map((a) => (
+  //         <DigiInfoCardMulti
+  //           afHeading={a.headline}
+  //           afHeadingLevel={InfoCardMultiHeadingLevel.H2}
+  //           afType={InfoCardMultiType.ENTRY}
+  //           afLinkHref={`/ads/${a.id}`}
+  //           key={a.id}
+  //         >
+  //           <h3 style={{ color: '#dcdbdb' }}>{a.employer.name}</h3>
+  //         </DigiInfoCardMulti>
+  //       ))}
+  //     </DigiLayoutColumns>
+  //   </DigiTypography>
+  // );
+
+  // return <>{afHTML}</>;
 };
