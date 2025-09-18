@@ -15,3 +15,14 @@ export const FooterWrapper = styled.footer`
   margin-top: 2rem;
   border-top: 3px dashed #ebda39;
 `;
+
+export const LoaderSpinnerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+`;
+
+export const MessageWrapper = styled.div`
+  padding-left: 24px;
+  padding-bottom: 24px;
+`;
