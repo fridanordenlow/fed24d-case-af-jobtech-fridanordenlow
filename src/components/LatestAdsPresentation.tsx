@@ -20,6 +20,7 @@ export const LatestAdsPresentation = () => {
 
   const afHTML = (
     <DigiTypography>
+
       <h2>Senaste publicerade annonser</h2>
       <DigiLayoutColumns
         afElement={LayoutColumnsElement.DIV}
