@@ -2,10 +2,6 @@ import { DigiNavigationPagination } from '@digi/arbetsformedlingen-react';
 import { useAdContext } from '../hooks/useAdContext';
 
 export const AdsPagination = () => {
-  // const loaderData = useLoaderData<AdsLoader>();
-  // const { setTotalPages, totalPages, totalResult } = useAdContext();
-  // const startValue = totalPages * 10 - 9;
-
   const { currentPage, setCurrentPage, totalResult } = useAdContext();
   const totalPages = Math.ceil(totalResult / 10);
   const startValue = (currentPage - 1) * 10 + 1;
@@ -20,12 +16,6 @@ export const AdsPagination = () => {
       console.log('pagination event:', e.detail);
     }
   };
-
-  // const handlePagination = (e: CustomEvent) => {
-  //   if (e.detail !== null) {
-  //     setCurrentPage(e.detail);
-  //   }
-  // };
 
   return (
     <DigiNavigationPagination

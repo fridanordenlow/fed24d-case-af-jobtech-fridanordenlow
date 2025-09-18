@@ -24,16 +24,14 @@ export const SearchForm = () => {
     setError,
     totalResult,
     setTotalResult,
-    // currentPage,
     setCurrentPage,
   } = useAdContext();
   const [userInput, setUserInput] = useState(searchQuery);
   const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = async (e: CustomEvent<string>) => {
-    // const searchValue = e.detail;
-    const searchValue = e.detail.trim();
-    if (!searchValue) return;
+    const searchValue = e.detail;
+    if (!searchValue) return; // Prevent empty searches
 
     const page = 1;
 
@@ -53,11 +51,7 @@ export const SearchForm = () => {
       setAds(newAds);
 
       const total = results.totalHits?.value || 0;
-      // setTotalResult(total > 100 ? 100 : total);
       setTotalResult(newAds.length === 0 ? 0 : total > 100 ? 100 : total);
-
-      // setAds(results?.ads || []);
-      // setTotalResult(results.totalHits?.value || 0);
 
       // // setAds(results.ads);
       // if (results.totalHits.value > 100) {
