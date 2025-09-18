@@ -7,10 +7,6 @@
   --digi--color--background--primary: #2d2b2b;
   --digi--color--background--secondary: #2d2b2b;
 
-  /* --digi--layout-block--background--tertiary: #2d2b2b; */
-
-  /* --digi--info-card--background-color--primary: gray; */
-
   --digi--color--text--primary: #dcdbdb;
 
   --digi--color--border--secondary: #808080;
@@ -33,7 +29,6 @@ main {
   width: 100%;
   margin-bottom: 1rem;
   min-height: 100dvh;
-  /* min-height: 58.3dvh; Temporary to fill out page, couldn't make root take up 100% height */
 }
 
 /* --- Typography --- */
@@ -166,4 +161,9 @@ h4 {
 
 .sc-digi-notification-error-page a:hover {
   text-decoration: 2px dashed underline #ebda39;
+}
+
+.sc-digi-notification-error-page path,
+.sc-digi-notification-error-page line {
+  stroke: #dcdbdb;
 }

@@ -7,7 +7,7 @@ import {
   DigiIconGlobe,
   DigiIconEnvelope,
 } from '@digi/arbetsformedlingen-react';
-import styled from 'styled-components';
+import { FooterWrapper } from './styled/Wrappers';
 
 export const Footer = () => {
   return (
@@ -54,13 +54,3 @@ export const Footer = () => {
     </FooterWrapper>
   );
 };
-
-export const FooterWrapper = styled.footer`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: auto;
-  padding: 1rem 0.5rem;
-  margin-top: 2rem;
-  border-top: 3px dashed #ebda39;
-`;

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AdContext } from './AdContext';
+import { AdContext } from '../contexts/AdContext';
 
 export const useAdContext = () => {
   const context = useContext(AdContext);

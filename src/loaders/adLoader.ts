@@ -5,6 +5,7 @@ import type { AdExt } from '../models/AdExt';
 export type AdLoader = {
   ad: AdExt;
 };
+
 export const adLoader = async ({ params }: LoaderFunctionArgs) => {
   const { id } = params;
   if (!id) {

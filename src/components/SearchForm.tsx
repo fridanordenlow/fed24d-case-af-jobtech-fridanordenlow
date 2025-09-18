@@ -9,8 +9,8 @@ import {
   DigiLayoutContainer,
   DigiFormInputSearch,
 } from '@digi/arbetsformedlingen-react';
-import { getAdsNew } from '../services/adService';
-import { useAdContext } from '../contexts/useAdContext';
+import { useAdContext } from '../hooks/useAdContext';
+import { getAds } from '../services/adService';
 
 export const SearchForm = () => {
   const {
@@ -19,8 +19,9 @@ export const SearchForm = () => {
     setSearchQuery,
     setLoading,
     setError,
+    setCurrentPage,
     setCurrentTotal,
-  } = useAdContext(); // Custom hook for context
+  } = useAdContext();
   const [userInput, setUserInput] = useState(searchQuery);
 
   const handleSearch = async (e: CustomEvent<string>) => {
@@ -30,8 +31,10 @@ export const SearchForm = () => {
     setError(null);
 
     try {
-      const results = await getAdsNew(searchValue, 0, 100);
+      const results = await getAds(searchValue, 0, 100);
       setAds(results.ads);
+      setCurrentPage(1);
+      // if (results.totalHits.value < 0) {}
       if (results.totalHits.value > 100) {
         setCurrentTotal(100);
       } else {
@@ -83,11 +86,6 @@ export const SearchForm = () => {
           afValue={userInput}
           onAfOnSubmitSearch={handleSearch}
           onAfOnInput={handleInput}
-          //   onAfOnInput={(e: CustomEvent) => {
-          //     const inputValue =
-          //       (e.detail.target as HTMLInputElement).value || ''; // e.detail = payload from Af component
-          //     setUserInput(inputValue);
-          //   }}
         ></DigiFormInputSearch>
         {/* <DigiFormFilter
           afFilterButtonText="Filter"
