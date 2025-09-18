@@ -14,7 +14,7 @@ export const getAds = async (query: string, offset: number, limit: number) => {
   const response = await get<APIResponse>(
     `${BASE_URL}${SEARCH}&q=${encodedQuery}&offset=${offset}&limit=${limit}`
   );
-  localStorage.setItem('ads', JSON.stringify(response.hits));
+  // localStorage.setItem('ads', JSON.stringify(response.hits));
 
   return { ads: response.hits, totalHits: response.total };
 };

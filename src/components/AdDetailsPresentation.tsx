@@ -19,7 +19,7 @@ import {
   RightSection,
   Divider,
   InfoSection,
-} from "./styled/AdDetailsPresentationStyling";
+} from './styled/AdDetailsPresentationStyling';
 
 interface Props {
   ad: AdExt;
@@ -53,7 +53,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                   )}
 
                   {ad.employment_type?.label && (
-                    <p>
+                    <div>
                       {ad.occupation_field?.label && (
                         <p>
                           <strong>Yrkesområde:</strong>{' '}
@@ -67,7 +67,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                         </p>
                       )}
                       {ad.employment_type.label}
-                    </p>
+                    </div>
                   )}
 
                   {ad.working_hours_type?.label && (
@@ -76,26 +76,30 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                     </p>
                   )}
 
-                  <InfoSection bgColor="gray">
+                  <InfoSection>
                     {ad.must_have?.work_experiences &&
                       ad.must_have.work_experiences.length > 0 && (
-                        <p>
-                          <strong>Yrkeserfarenhet krävs:</strong>
+                        <div>
+                          <p>
+                            <strong>Yrkeserfarenhet krävs:</strong>
+                          </p>
                           {ad.must_have.work_experiences.map((exp, i) => (
                             <div key={i}>{exp.label}</div>
                           ))}
-                        </p>
+                        </div>
                       )}
 
                     {ad.nice_to_have?.work_experiences &&
                       ad.nice_to_have.work_experiences.length > 0 && (
-                        <p>
-                          <strong>Meriterande yrkeserfarenhet:</strong>
+                        <div>
+                          <p>
+                            <strong>Meriterande yrkeserfarenhet:</strong>
+                          </p>
 
                           {ad.nice_to_have.work_experiences.map((exp, i) => (
                             <div key={i}>{exp.label}</div>
                           ))}
-                        </p>
+                        </div>
                       )}
 
                     {typeof ad.driving_license_required === 'boolean' && (
@@ -108,8 +112,10 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
 
                   <InfoSection>
                     {ad.application_contacts?.length ? (
-                      <p>
-                        <strong>Kontaktperson</strong>
+                      <div>
+                        <p>
+                          <strong>Kontaktperson</strong>
+                        </p>
                         {ad.application_contacts.map((contact, index) => (
                           <div key={index}>
                             {contact.name && (
@@ -132,7 +138,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                             )}
                           </div>
                         ))}
-                      </p>
+                      </div>
                     ) : null}
                   </InfoSection>
 
@@ -178,7 +184,7 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
                       __html: ad.description.text_formatted?.replace(
                         /\r?\n/g,
                         '<br />'
-                      ), // ersätter radbrytningar
+                      ),
                     }}
                   ></p>
                 </DigiTypography>

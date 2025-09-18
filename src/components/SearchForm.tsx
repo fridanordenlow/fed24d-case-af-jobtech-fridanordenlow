@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   LayoutContainerVariation,
   FormInputSearchVariation,
@@ -11,47 +11,73 @@ import {
 } from '@digi/arbetsformedlingen-react';
 import { useAdContext } from '../hooks/useAdContext';
 import { getAds } from '../services/adService';
+import { MessageWrapper } from './styled/Wrappers';
 
 export const SearchForm = () => {
   const {
+    ads,
     setAds,
     searchQuery,
     setSearchQuery,
+    loading,
     setLoading,
     setError,
+    totalResult,
+    setTotalResult,
     setCurrentPage,
-    setCurrentTotal,
   } = useAdContext();
   const [userInput, setUserInput] = useState(searchQuery);
+  const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = async (e: CustomEvent<string>) => {
     const searchValue = e.detail;
+    if (!searchValue) return; // Prevent empty searches
+
+    const page = 1;
+
     setLoading(true);
     setSearchQuery(searchValue);
     setError(null);
+    setCurrentPage(page);
+    setHasSearched(true);
+    // setAds([]);
+    // setTotalResult(0);
 
     try {
-      const results = await getAds(searchValue, 0, 100);
-      setAds(results.ads);
-      setCurrentPage(1);
-      // if (results.totalHits.value < 0) {}
-      if (results.totalHits.value > 100) {
-        setCurrentTotal(100);
-      } else {
-        setCurrentTotal(results.totalHits.value);
-      }
+      const offset = (page - 1) * 10;
+      const results = await getAds(searchValue, offset, 100);
+
+      const newAds = results?.ads || [];
+      setAds(newAds);
+
+      const total = results.totalHits?.value || 0;
+      setTotalResult(newAds.length === 0 ? 0 : total > 100 ? 100 : total);
+
+      // // setAds(results.ads);
+      // if (results.totalHits.value > 100) {
+      //   setTotalResult(100);
+      // } else {
+      //   setTotalResult(results.totalHits?.value || 0);
+      //   // setTotalResult(results.totalHits.value);
+      // }
     } catch (err) {
       console.error(err);
       setError('Något gick fel, försök igen.');
+      setAds([]);
+      setTotalResult(0);
     } finally {
-      // setUserInput(''); // Should search input be cleared or not after search?
+      setUserInput('');
       setLoading(false);
     }
   };
 
+  useEffect(() => {
+    console.log({ totalResult, searchQuery, ads: ads.length });
+  }, [totalResult, ads, searchQuery]);
+
   const handleInput = (e: CustomEvent) => {
     const value = (e.detail.target as HTMLInputElement).value || '';
-    if (value.length > 50) return; // Ignore too long input
+    if (value.length > 50) return;
     setUserInput(value);
   };
 
@@ -87,6 +113,16 @@ export const SearchForm = () => {
           onAfOnSubmitSearch={handleSearch}
           onAfOnInput={handleInput}
         ></DigiFormInputSearch>
+        {hasSearched && !loading && searchQuery && ads.length > 0 && (
+          <MessageWrapper>
+            <p>Visar sökresultat för "{searchQuery}"</p>
+          </MessageWrapper>
+        )}
+        {hasSearched && !loading && searchQuery && ads.length === 0 && (
+          <MessageWrapper>
+            <p>Inga annonser hittades för "{searchQuery}"</p>
+          </MessageWrapper>
+        )}
         {/* <DigiFormFilter
           afFilterButtonText="Filter"
           afSubmitButtonText="Filtrera"
