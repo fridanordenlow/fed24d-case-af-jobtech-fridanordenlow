@@ -13,5 +13,5 @@ ads.forEach((ad) => {
   return Object.entries(counts)
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count)
-    .slice(0, 10);
+    .slice(0, 7);
 };
