@@ -14,9 +14,6 @@ type AdContextType = {
   setCurrentPage: (page: number) => void;
   currentTotal: number;
   setCurrentTotal: (total: number) => void;
-
-  // lägg till totalResults ?
-  // lägg till offset ???
 };
 
 export const AdContext = createContext<AdContextType | undefined>(undefined);

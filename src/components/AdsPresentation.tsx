@@ -6,10 +6,10 @@ import {
   InfoCardMultiHeadingLevel,
   InfoCardMultiType,
 } from '@digi/arbetsformedlingen';
-import { useAdContext } from '../contexts/useAdContext';
+import { useAdContext } from '../hooks/useAdContext';
 
 export const AdsPresentation = () => {
-  const { ads, currentPage } = useAdContext(); // Custom hook to get ads from AdContext
+  const { ads, currentPage } = useAdContext();
   const startIndex = (currentPage - 1) * 10;
   const currentAds = ads.slice(startIndex, startIndex + 10);
   const afHTML = (

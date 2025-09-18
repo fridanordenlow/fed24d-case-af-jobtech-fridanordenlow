@@ -4,7 +4,6 @@ import {
   DigiLinkInternal,
 } from '@digi/arbetsformedlingen-react';
 
-// Visar samma felsida oavsett typ av fel?
 export const Error = () => {
   return (
     <DigiNotificationErrorPage

@@ -1,18 +1,15 @@
 import { DigiNavigationPagination } from '@digi/arbetsformedlingen-react';
 import { useLoaderData } from 'react-router';
-import { useAdContext } from '../contexts/useAdContext';
+import { useAdContext } from '../hooks/useAdContext';
 import type { AdsLoader } from '../loaders/adsLoader';
 
 export const AdsPagination = () => {
   const loaderData = useLoaderData<AdsLoader>();
-  const { setCurrentPage, currentPage, currentTotal } = useAdContext(); // Custom hook for context
+  const { setCurrentPage, currentPage, currentTotal } = useAdContext();
   const startValue = currentPage * 10 - 9;
 
   const handlePagination = (e: CustomEvent) => {
     if (e.detail === null) {
-      console.log(loaderData.total.value);
-      console.log(currentTotal);
-
       setCurrentPage(1);
       return;
     } else {

@@ -8,7 +8,7 @@ import { useLoaderData } from 'react-router';
 // import { LoaderSpinnerSize } from '@digi/arbetsformedlingen';
 import { SearchForm } from '../components/SearchForm';
 import { AdsPresentation } from '../components/AdsPresentation';
-import { useAdContext } from '../contexts/useAdContext';
+import { useAdContext } from '../hooks/useAdContext';
 import type { AdsLoader } from '../loaders/adsLoader';
 import { AdsPagination } from '../components/AdsPagination';
 
