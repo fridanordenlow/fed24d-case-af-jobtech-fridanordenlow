@@ -10,11 +10,11 @@ type AdContextType = {
   setLoading: (loading: boolean) => void;
   error: string | null;
   setError: (error: string | null) => void;
-  totalResult: number; // antal resultat på sökning
+  totalResult: number;
   setTotalResult: (total: number) => void;
-  totalPages: number; // antal sidor
+  totalPages: number;
   setTotalPages: (page: number) => void;
-  currentPage: number; // sida man befinner sig på
+  currentPage: number;
   setCurrentPage: (page: number) => void;
 };
 
