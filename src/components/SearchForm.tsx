@@ -41,7 +41,7 @@ export const SearchForm = () => {
     setCurrentPage(page);
     setHasSearched(true);
     // setAds([]);
-    // setTotalResult(0);
+    // setTotalResult(0);  
 
     try {
       const offset = (page - 1) * 10;
@@ -71,6 +71,7 @@ export const SearchForm = () => {
     }
   };
 
+ 
   useEffect(() => {
     console.log({ totalResult, searchQuery, ads: ads.length });
   }, [totalResult, ads, searchQuery]);
