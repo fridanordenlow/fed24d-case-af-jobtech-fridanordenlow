@@ -1,8 +1,13 @@
-import { DigiButton } from "@digi/arbetsformedlingen-react";
-import "./App.css";
+import { RouterProvider } from 'react-router';
+import { router } from './Router';
+import { AdProvider } from './contexts/AdProvider';
 
 function App() {
-  return <DigiButton>Hej</DigiButton>;
+  return (
+    <AdProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AdProvider>
+  );
 }
 
 export default App;
