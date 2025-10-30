@@ -1,11 +1,11 @@
 import { useState, type ReactNode } from 'react';
-import type { Ad } from '../models/Ad';
 import { AdContext } from './AdContext';
+import type { AdExt } from '../models/AdExt';
 
 type AdProviderProps = { children: ReactNode };
 
 export const AdProvider = ({ children }: AdProviderProps) => {
-  const [ads, setAds] = useState<Ad[]>([]);
+  const [ads, setAds] = useState<AdExt[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

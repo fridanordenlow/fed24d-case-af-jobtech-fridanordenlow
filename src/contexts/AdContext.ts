@@ -1,9 +1,12 @@
 import { createContext } from 'react';
-import type { Ad } from '../models/Ad';
+// import type { Ad } from '../models/Ad';
+import type { AdExt } from '../models/AdExt';
 
 type AdContextType = {
-  ads: Ad[];
-  setAds: (ads: Ad[]) => void;
+  // ads: Ad[];
+  // setAds: (ads: Ad[]) => void;
+  ads: AdExt[];
+  setAds: (ads: AdExt[]) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   loading: boolean;
