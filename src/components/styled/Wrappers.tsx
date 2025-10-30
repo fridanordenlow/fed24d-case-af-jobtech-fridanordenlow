@@ -6,6 +6,12 @@ export const WelcomeWrapper = styled.div`
   margin-bottom: 2rem;
 `;
 
+export const ChartWrapper = styled.div`
+  padding: 0 1rem 2rem 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px dashed #ebda39;
+`;
+
 export const FooterWrapper = styled.footer`
   display: flex;
   align-items: center;
