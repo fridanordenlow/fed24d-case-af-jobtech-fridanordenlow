@@ -25,7 +25,7 @@ export const SearchForm = () => {
     setTotalResult,
     setCurrentPage,
   } = useAdContext();
-  const [userInput, setUserInput] = useState(searchQuery);
+  const [userInput, setUserInput] = useState('');
   const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = async (e: CustomEvent<string>) => {
