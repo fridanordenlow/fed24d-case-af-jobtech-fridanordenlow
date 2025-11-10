@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WelcomeWrapper = styled.div`
-  border-bottom: 3px dashed #ebda39;
+  border-bottom: 3px dashed #dcdbdb;
   padding-bottom: 2rem;
   margin-bottom: 2rem;
 `;
@@ -9,7 +9,7 @@ export const WelcomeWrapper = styled.div`
 export const ChartWrapper = styled.div`
   padding: 0 1rem 2rem 2rem;
   margin-bottom: 2rem;
-  border-bottom: 3px dashed #ebda39;
+  border-bottom: 3px dashed #dcdbdb;
 `;
 
 export const FooterWrapper = styled.footer`
