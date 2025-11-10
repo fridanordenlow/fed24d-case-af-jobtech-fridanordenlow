@@ -31,7 +31,9 @@ export const AdDetailsPresentation = ({ ad }: Props) => {
       <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
         <Wrapper>
           <DigiTypography afVariation={TypographyVariation.LARGE}>
-            <h2>{ad.headline}</h2>
+            <h3 style={{ color: '#a491e6', fontWeight: '700' }}>
+              {ad.headline}
+            </h3>
             <h3>{ad.employer.name}</h3>
           </DigiTypography>
 
