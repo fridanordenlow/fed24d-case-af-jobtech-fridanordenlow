@@ -1,4 +1,3 @@
-// JobsPerMunicipalityChart.tsx
 import {
   BarChart,
   Bar,
@@ -16,7 +15,7 @@ export const JobsStatisticsChart = () => {
   const { ads } = useAdContext();
 
   if (ads.length === 0) {
-    return <p>Ingen statistik tillgänglig just nu.</p>;
+    return;
   }
 
   const data = countJobsPerMunicipality(ads);
