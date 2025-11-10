@@ -2,8 +2,10 @@ import type { APIResponse } from '../models/APIResponse';
 import type { AdExt } from '../models/AdExt';
 import { get } from './serviceBase';
 
-const BASE_URL = 'https://jobsearch.api.jobtechdev.se/';
-const SEARCH = 'search?occupation-group=DJh5_yyF_hEM';
+// const BASE_URL = 'https://jobsearch.api.jobtechdev.se/';
+// const SEARCH = 'search?occupation-group=DJh5_yyF_hEM';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+const SEARCH = import.meta.env.VITE_SEARCH;
 
 export const getAds = async (query: string, offset: number, limit: number) => {
   const encodedQuery = encodeURIComponent(query);
