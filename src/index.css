@@ -40,9 +40,9 @@ h1 {
 }
 
 h2 {
-  font-family: 'Press Start 2P', system-ui;
+  font-family: 'Source Code Pro', monospace;
   font-size: 1.2rem;
-  color: #a491e6;
+  color: #dcdbdb;
 }
 
 h3 {
